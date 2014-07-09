@@ -34,21 +34,30 @@
     self = [super init];
     if (!self) return(nil);
     
-    // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+    // Create a colored background
+    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]];
     [self addChild:background];
     
-    // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Chalkduster" fontSize:36.0f];
+    // 1st Push
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Push" fontName:@"Verdana" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
+    label.color = [CCColor blueColor];
+    label.position = ccp(.4f, 0.6f); // left of Middle of screen
     [self addChild:label];
     
-    // Helloworld scene button
+    // 1st Push
+    CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"Push" fontName:@"Verdana" fontSize:36.0f];
+    label2.positionType = CCPositionTypeNormalized;
+    label2.color = [CCColor redColor];
+    label2.position = ccp(.6f, 0.4f); // right of Middle of screen
+    [self addChild:label2];
+    
+    
+    // Start button
     CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Start ]" fontName:@"Verdana-Bold" fontSize:18.0f];
     helloWorldButton.positionType = CCPositionTypeNormalized;
-    helloWorldButton.position = ccp(0.5f, 0.35f);
+    helloWorldButton.position = ccp(0.5f, 0.5f);
+    helloWorldButton.color = [CCColor blackColor];
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
 

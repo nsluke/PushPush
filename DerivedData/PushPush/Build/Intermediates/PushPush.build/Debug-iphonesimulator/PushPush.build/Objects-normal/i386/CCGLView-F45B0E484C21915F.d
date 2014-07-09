@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/CCGLView.m \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../ccMacros.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../ccConfig.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Support/CGPointExtension.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/CCGLView.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/CCESRenderer.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/CCES2Renderer.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCDirector.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../ccTypes.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../Platforms/CCGL.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCProtocols.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Support/CCColor.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/mat4.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/utility.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCResponderManager.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCConfiguration.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../Support/OpenGL_Internal.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/CCScene.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCNode.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../ccGLStateCache.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/kazmath.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/vec2.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/vec3.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/mat3.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/quaternion.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/plane.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/aabb.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/kazmath/include/kazmath/ray2.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCResponder.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/Platforms/iOS/../../CCScheduler.h \
+  /Users/lukesolomon/PushPush/PushPush/Libraries/cocos2d/CCDirector_Private.h
