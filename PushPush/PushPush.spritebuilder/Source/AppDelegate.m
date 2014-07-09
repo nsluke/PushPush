@@ -24,7 +24,6 @@
  */
 
 #import "cocos2d.h"
-
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
