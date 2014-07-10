@@ -37,6 +37,8 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		D516AF03196DB773009A45F1 /* line.m in Sources */ = {isa = PBXBuildFile; fileRef = D516AF02196DB773009A45F1 /* line.m */; };
+		D526A08C196DD6F5001A2FB4 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D526A08B196DD6F5001A2FB4 /* Gameplay.m */; };
+		D526A090196F0513001A2FB4 /* FormationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D526A08F196F0513001A2FB4 /* FormationHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,10 @@
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		D516AF01196DB773009A45F1 /* line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = line.h; sourceTree = "<group>"; };
 		D516AF02196DB773009A45F1 /* line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = line.m; sourceTree = "<group>"; };
+		D526A08A196DD6F5001A2FB4 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gameplay.h; sourceTree = "<group>"; };
+		D526A08B196DD6F5001A2FB4 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameplay.m; sourceTree = "<group>"; };
+		D526A08E196F0513001A2FB4 /* FormationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormationHandler.h; sourceTree = "<group>"; };
+		D526A08F196F0513001A2FB4 /* FormationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormationHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				D526A08E196F0513001A2FB4 /* FormationHandler.h */,
+				D526A08F196F0513001A2FB4 /* FormationHandler.m */,
+				D526A08A196DD6F5001A2FB4 /* Gameplay.h */,
+				D526A08B196DD6F5001A2FB4 /* Gameplay.m */,
 				D516AF01196DB773009A45F1 /* line.h */,
 				D516AF02196DB773009A45F1 /* line.m */,
 			);
@@ -346,8 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				D526A08C196DD6F5001A2FB4 /* Gameplay.m in Sources */,
 				D516AF03196DB773009A45F1 /* line.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
+				D526A090196F0513001A2FB4 /* FormationHandler.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

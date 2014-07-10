@@ -10,4 +10,13 @@
 
 @interface MainScene : CCNode
 
+- (void) play;
+/*!
+ @method
+ 
+ This method does nothing yet.
+ */
+
+
+
 @end

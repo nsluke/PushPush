@@ -10,10 +10,26 @@
 
 @interface line : NSObject
 
-@property (nonatomic, assign) LinePosition currentRobotAction;
-@property (nonatomic, assign) LineStatus priorRobotAction;
+//@property (nonatomic, assign) currentRobotAction;
+//@property (nonatomic, assign) priorRobotAction;
 
-- (void )
+- (void) main;
+/*!
+ @method
+ 
+ This method does nothing yet.
+ */
+
+- (int) lineValue;
+/*!
+ @method
+ 
+ 
+ 
+ @return Returns the value of the line base on the current formation.
+ */
+
+
 
 
 @end

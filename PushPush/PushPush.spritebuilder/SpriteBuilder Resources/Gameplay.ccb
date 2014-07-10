@@ -165,7 +165,7 @@
 						<key>displayName</key>
 						<string>LineBotLeft</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>leftLine</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -214,6 +214,8 @@
 								<string>Line.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -227,7 +229,7 @@
 						<key>displayName</key>
 						<string>LineBotCenter</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>middleLine</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -289,7 +291,7 @@
 						<key>displayName</key>
 						<string>LineBotRight</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>rightLine</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -773,7 +775,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>leftPush</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -1603,7 +1605,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>RightPush</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -2259,7 +2261,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>Gameplay</string>
 		<key>displayName</key>
 		<string>Background</string>
 		<key>memberVarAssignmentName</key>
@@ -2274,7 +2276,7 @@
 				<key>type</key>
 				<string>StringSimple</string>
 				<key>value</key>
-				<string></string>
+				<string>Gameplay</string>
 			</dict>
 			<dict>
 				<key>name</key>

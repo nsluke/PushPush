@@ -16,4 +16,14 @@
 
 
 
+- (int) lineValue {
+    int lineValue = 1;
+    
+    
+    return lineValue;
+}
+
+
+
+
 @end

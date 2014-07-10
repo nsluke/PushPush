@@ -495,7 +495,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCButton</string>
+								<string>Versus</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -821,7 +821,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCButton</string>
+								<string>Endless</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -1147,7 +1147,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCButton</string>
+								<string>Arcade</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -1207,7 +1207,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>play</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -1462,6 +1462,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -1540,8 +1542,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
