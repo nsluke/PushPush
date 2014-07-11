@@ -36,9 +36,9 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
-		D516AF03196DB773009A45F1 /* line.m in Sources */ = {isa = PBXBuildFile; fileRef = D516AF02196DB773009A45F1 /* line.m */; };
-		D526A08C196DD6F5001A2FB4 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D526A08B196DD6F5001A2FB4 /* Gameplay.m */; };
-		D526A090196F0513001A2FB4 /* FormationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D526A08F196F0513001A2FB4 /* FormationHandler.m */; };
+		D518ED471970681100923DC1 /* FormationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED421970681100923DC1 /* FormationHandler.m */; };
+		D518ED4E1970779900923DC1 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED4D1970779900923DC1 /* Test.m */; };
+		D518ED5719707AAC00923DC1 /* Line2.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5619707AAC00923DC1 /* Line2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,12 +93,12 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		D516AF01196DB773009A45F1 /* line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = line.h; sourceTree = "<group>"; };
-		D516AF02196DB773009A45F1 /* line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = line.m; sourceTree = "<group>"; };
-		D526A08A196DD6F5001A2FB4 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gameplay.h; sourceTree = "<group>"; };
-		D526A08B196DD6F5001A2FB4 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gameplay.m; sourceTree = "<group>"; };
-		D526A08E196F0513001A2FB4 /* FormationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormationHandler.h; sourceTree = "<group>"; };
-		D526A08F196F0513001A2FB4 /* FormationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormationHandler.m; sourceTree = "<group>"; };
+		D518ED411970681100923DC1 /* FormationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormationHandler.h; path = Source/FormationHandler.h; sourceTree = "<group>"; };
+		D518ED421970681100923DC1 /* FormationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormationHandler.m; path = Source/FormationHandler.m; sourceTree = "<group>"; };
+		D518ED4C1970779900923DC1 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = Source/Test.h; sourceTree = "<group>"; };
+		D518ED4D1970779900923DC1 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Test.m; path = Source/Test.m; sourceTree = "<group>"; };
+		D518ED5519707AAC00923DC1 /* Line2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line2.h; path = Source/Line2.h; sourceTree = "<group>"; };
+		D518ED5619707AAC00923DC1 /* Line2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line2.m; path = Source/Line2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,16 +134,16 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B737893D1807617C0076A88C /* AppDelegate.h */,
-				B737893E1807617C0076A88C /* AppDelegate.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				D526A08E196F0513001A2FB4 /* FormationHandler.h */,
-				D526A08F196F0513001A2FB4 /* FormationHandler.m */,
-				D526A08A196DD6F5001A2FB4 /* Gameplay.h */,
-				D526A08B196DD6F5001A2FB4 /* Gameplay.m */,
-				D516AF01196DB773009A45F1 /* line.h */,
-				D516AF02196DB773009A45F1 /* line.m */,
+				D518ED4C1970779900923DC1 /* Test.h */,
+				D518ED4D1970779900923DC1 /* Test.m */,
+				D518ED5519707AAC00923DC1 /* Line2.h */,
+				D518ED5619707AAC00923DC1 /* Line2.m */,
+				B737893D1807617C0076A88C /* AppDelegate.h */,
+				B737893E1807617C0076A88C /* AppDelegate.m */,
+				D518ED411970681100923DC1 /* FormationHandler.h */,
+				D518ED421970681100923DC1 /* FormationHandler.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -356,10 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
-				D526A08C196DD6F5001A2FB4 /* Gameplay.m in Sources */,
-				D516AF03196DB773009A45F1 /* line.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
-				D526A090196F0513001A2FB4 /* FormationHandler.m in Sources */,
+				D518ED5719707AAC00923DC1 /* Line2.m in Sources */,
+				D518ED4E1970779900923DC1 /* Test.m in Sources */,
+				D518ED471970681100923DC1 /* FormationHandler.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,9 +439,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
+				COPY_PHASE_STRIP = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -462,7 +462,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -472,8 +472,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -493,7 +493,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
