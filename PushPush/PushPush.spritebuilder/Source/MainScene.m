@@ -13,22 +13,18 @@
 
 
 - (void) play {
-    CCLOG(@"play button pressed");
     
+    CCLOG(@"play button pressed");
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    
+    CCLOG(@"play button stop");
+    
 }
 
 
 
-/**
- Need to create seperate methods for each push button?
- Taps only register if touched in the right order? ie, left, right, left, right?
- 
- Start thinking about swipe handling
- 
- 
- */
+
 
 
 

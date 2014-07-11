@@ -214,8 +214,6 @@
 								<string>Line.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1605,7 +1603,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>RightPush</string>
+									<string>rightPush</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -2276,7 +2274,7 @@
 				<key>type</key>
 				<string>StringSimple</string>
 				<key>value</key>
-				<string>Gameplay</string>
+				<string></string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -2330,6 +2328,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
