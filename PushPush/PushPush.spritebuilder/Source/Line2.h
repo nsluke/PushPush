@@ -8,6 +8,6 @@
 
 #import "CCNode.h"
 
-@interface Line2 : CCNode
+@interface Line2 : CCSprite
 
 @end
