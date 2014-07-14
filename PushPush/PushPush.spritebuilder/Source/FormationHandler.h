@@ -10,6 +10,6 @@
 
 @interface FormationHandler : NSObject
 
-
+-(void) rightPush;
 
 @end

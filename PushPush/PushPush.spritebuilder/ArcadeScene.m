@@ -7,12 +7,30 @@
 //
 
 #import "ArcadeScene.h"
+#import "FormationHandler.h"
 
-@implementation ArcadeScene
+@implementation ArcadeScene{
+    
+    CCNodeColor *TopLeftLine;
+    CCNodeColor *TopMidLine;
+    CCNodeColor *TopRightLine;
+    CCNodeColor *BottomLeftLine;
+    CCNodeColor *BottomMidLine;
+    CCNodeColor *BottomRightLine;
+    
+    CCButton *rightPush;
+    CCButton *_leftPush;
+    
+    //CCParticleSystem *hitMarkL;
+    
+    int yVal;
+    int pushaT;
+    
+    FormationHandler *BottomHandler;
+    FormationHandler *TopHandler;
 
-int pushaT;
-
-
+    
+}
 
 /*
  Five formations will be designed
@@ -73,31 +91,42 @@ int pushaT;
 
 - (void) didLoadFromCCB {
     // tell this scene to accept touches
-    //self.userInteractionEnabled = TRUE;
-    
-    //CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
+    self.userInteractionEnabled = TRUE;
     
     
 }
 
-
-
 // --------------------------------------------------------------------------------------------------------
 //#pragma mark Push Buttons
 
+-(void) onEnter {
+    //midLine = [CCBReader load:@"Line"];
+    
+    yVal = 2;
+    
+    [super onEnter];
 
+    [super setMultipleTouchEnabled:YES];
+    
+    //hitMarkL = (CCParticleSystem *)[CCBReader load:@"hitMarkLeft"];
+
+}
 
 - (void) leftPush {
     
     CCLOG(@"leftPush button pressed");
+
     
-    if (pushaT == 1) {
-        pushaT = 0;
-        
-        
-    } else {
-        CCLOG(@"Can't push the left button twice!");
-    }
+    //[_leftPush.parent addChild:hitMarkL];
+    
+//    if (pushaT == 1) {
+//        pushaT = 0;
+//        
+        [self moveLine:yVal];
+    
+//    } else {
+//        CCLOG(@"Can't push the left button twice!");
+//    }
 
 
     
@@ -109,54 +138,72 @@ int pushaT;
     
     CCLOG(@"rightPush button pressed");
     
-    if (pushaT == 0) {
-        pushaT = 1;
-    } else {
-        CCLOG(@"Can't push the right button twice!");
-    }
-        
+//    if (pushaT == 0) {
+//        pushaT = 1;
+//        
+        [self moveLine:yVal];
+//        
+//    } else {
+//        CCLOG(@"Can't push the right button twice!");
+//    }
+    
 
     
+}
+
+- (void) moveLine: (int) dDist {
+    
+    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
+
+    BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y + dDist);
+    
+    BottomLeftLine.positionInPoints = ccp(BottomLeftLine.positionInPoints.x, BottomLeftLine.positionInPoints.y + dDist);
+
+    NSLog(@"The line should be moving");
 }
 
 
 
 
-/**
+
+
+
+
  // --------------------------------------------------------------------------------------------------------
  #pragma mark Swiping
  
  - (void) rightSwipe {
- CCLOG(@"player swiped right");
- 
+    CCLOG(@"player swiped right");
+     
+     [BottomHandler rightPush];
  
  }
  
  - (void) leftSwipe {
- CCLOG(@"player swiped left");
+    CCLOG(@"player swiped left");
  
  
  }
  
  - (void) doubleUpSwipe {
- CCLOG(@"player double swiped up");
+     CCLOG(@"player double swiped up");
  
  //
  }
  
  - (void) doubleLeftRightSwipe {
- CCLOG(@"player doubleLeftRightSwipe");
+     CCLOG(@"player doubleLeftRightSwipe");
  
  //
  }
  
  - (void) downSwipe {
- CCLOG(@"player swiped down");
+     CCLOG(@"player swiped down");
  
  //
  }
  
- // --------------------------------------------------------------------------------------------------------
- #pragma mark Push Buttons
- */
+
+ 
+ 
 @end

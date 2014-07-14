@@ -10,9 +10,7 @@
 
 @interface Line2 : CCSprite
 
-/*
- Lines need to have some kind of properties...push values and whatnot
- 
- */
+@property (nonatomic) int pushValue ;
+
 
 @end

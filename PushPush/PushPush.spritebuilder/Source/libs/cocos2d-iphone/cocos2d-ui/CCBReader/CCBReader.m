@@ -824,6 +824,7 @@ static inline float readFloat(CCBReader *self)
                     };
                     
                     NSString* setSelectorName = [NSString stringWithFormat:@"set%@:",[name capitalizedString]];
+                    
                     SEL setSelector = NSSelectorFromString(setSelectorName);
                     
                     if ([target respondsToSelector:selector] && [node respondsToSelector:setSelector])
