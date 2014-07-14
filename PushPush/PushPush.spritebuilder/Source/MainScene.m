@@ -16,7 +16,7 @@
     
     CCLOG(@"play button pressed");
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Test"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"ArcadeScene"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     CCLOG(@"play button stop");

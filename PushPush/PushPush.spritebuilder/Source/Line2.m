@@ -10,4 +10,12 @@
 
 @implementation Line2
 
++ (void) Moveline {
+    
+    CCMoveTo * actionMove = //[CCMoveTo actionWithDuration:actualDuration position:ccp(-monster.contentSize.width/2, actualX)];
+
+    
+}
+
+
 @end

@@ -1,14 +1,17 @@
 //
-//  Test.m
+//  ArcadeScene.m
 //  PushPush
 //
 //  Created by Luke Solomon on 7/11/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "Test.h"
+#import "ArcadeScene.h"
 
-@implementation Test
+@implementation ArcadeScene
+
+int pushaT;
+
 
 
 /*
@@ -22,7 +25,6 @@
  /\/\ - \/
  --------------
  
- 
  --left push--
  right lane gets -1
  middle lane gets +0
@@ -30,7 +32,6 @@
  *LEFT SWIPE*
  \/ - //\\
  --------------
- 
  
  --middle push--
  right lane gets -1
@@ -40,7 +41,6 @@
  \/ /\/\/\ \/
  --------------
  
- 
  --left & right push--
  right lane gets +1.5
  middle lane gets -2
@@ -49,11 +49,10 @@
  /\  \/\/ /\
  --------------
  
- 
  --flat--
- right lane gets +.3
- middle lane gets +.3
- left lane gets +.3
+ right lane gets +.3333
+ middle lane gets +.3333
+ left lane gets +.3333
  *SWIPE DOWN*
  /\ /\ /\
  --------------
@@ -86,23 +85,42 @@
 // --------------------------------------------------------------------------------------------------------
 //#pragma mark Push Buttons
 
+
+
 - (void) leftPush {
+    
     CCLOG(@"leftPush button pressed");
     
-    
-    //register one push
-    //run a check to make sure the other button has been pushed, handle with a boolean?
+    if (pushaT == 1) {
+        pushaT = 0;
+        
+        
+    } else {
+        CCLOG(@"Can't push the left button twice!");
+    }
+
+
     
     
 }
 
 - (void) rightPush {
+    //runs a check to make sure that the same button has not been pushed twice
+    
     CCLOG(@"rightPush button pressed");
     
-    //register one push
-    //run a check to make sure the other button has been pushed, handle with a boolean?
+    if (pushaT == 0) {
+        pushaT = 1;
+    } else {
+        CCLOG(@"Can't push the right button twice!");
+    }
+        
+
     
 }
+
+
+
 
 /**
  // --------------------------------------------------------------------------------------------------------

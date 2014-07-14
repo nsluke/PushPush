@@ -37,8 +37,8 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		D518ED471970681100923DC1 /* FormationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED421970681100923DC1 /* FormationHandler.m */; };
-		D518ED4E1970779900923DC1 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED4D1970779900923DC1 /* Test.m */; };
 		D518ED5719707AAC00923DC1 /* Line2.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5619707AAC00923DC1 /* Line2.m */; };
+		D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5919707FAF00923DC1 /* ArcadeScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,10 +95,10 @@
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		D518ED411970681100923DC1 /* FormationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormationHandler.h; path = Source/FormationHandler.h; sourceTree = "<group>"; };
 		D518ED421970681100923DC1 /* FormationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormationHandler.m; path = Source/FormationHandler.m; sourceTree = "<group>"; };
-		D518ED4C1970779900923DC1 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = Source/Test.h; sourceTree = "<group>"; };
-		D518ED4D1970779900923DC1 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Test.m; path = Source/Test.m; sourceTree = "<group>"; };
 		D518ED5519707AAC00923DC1 /* Line2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line2.h; path = Source/Line2.h; sourceTree = "<group>"; };
 		D518ED5619707AAC00923DC1 /* Line2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line2.m; path = Source/Line2.m; sourceTree = "<group>"; };
+		D518ED5819707FAF00923DC1 /* ArcadeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcadeScene.h; sourceTree = "<group>"; };
+		D518ED5919707FAF00923DC1 /* ArcadeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcadeScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 			children = (
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				D518ED4C1970779900923DC1 /* Test.h */,
-				D518ED4D1970779900923DC1 /* Test.m */,
+				D518ED5819707FAF00923DC1 /* ArcadeScene.h */,
+				D518ED5919707FAF00923DC1 /* ArcadeScene.m */,
 				D518ED5519707AAC00923DC1 /* Line2.h */,
 				D518ED5619707AAC00923DC1 /* Line2.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
@@ -356,9 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				D518ED5719707AAC00923DC1 /* Line2.m in Sources */,
-				D518ED4E1970779900923DC1 /* Test.m in Sources */,
 				D518ED471970681100923DC1 /* FormationHandler.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
