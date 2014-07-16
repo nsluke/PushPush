@@ -10,11 +10,11 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>21</integer>
+	<integer>22</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -81,10 +81,10 @@
 								<key>value</key>
 								<array>
 									<real>0.20000000298023224</real>
-									<real>110</real>
+									<real>0.0</real>
 									<integer>1</integer>
 									<integer>2</integer>
-									<integer>1</integer>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -94,8 +94,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
-									<real>0.5</real>
+									<real>0.0</real>
+									<real>0.60000002384185791</real>
 								</array>
 							</dict>
 							<dict>
@@ -295,11 +295,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.80000001192092896</real>
-									<real>120</real>
-									<integer>0</integer>
+									<real>0.20000000298023224</real>
+									<real>0.0</real>
+									<integer>3</integer>
 									<integer>2</integer>
-									<integer>1</integer>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -309,8 +309,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
-									<real>0.5</real>
+									<real>0.0</real>
+									<real>0.60000002384185791</real>
 								</array>
 							</dict>
 							<dict>
@@ -1462,8 +1462,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
