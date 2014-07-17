@@ -60,89 +60,21 @@
     
     if (touchLocation.x<SW/2 && touchLocation.y<SH/2){
         //bottom left quadrant
-        CCLOG(@"push detected");
-
-        [self leftPush];
-        
-
+        [self moveBottomLine:yVal];
     }
-    
-    
     else if (touchLocation.x>SW/2 && touchLocation.y<SH/2){
         //bottom right quadrant
-        [self rightPush];
-        
-        CCLOG(@"push detected");
-
+        [self moveBottomLine:yVal];
     }
-    
-    
     else if (touchLocation.x<SW/2 && touchLocation.y>SH/2){
         //top left quadrant
-        [self topLeftPush];
-        
-        CCLOG(@"push detected");
-
+        [self moveTopLine:yVal];
     }
-
-   
     else if (touchLocation.x>SW/2 && touchLocation.y>SH/2){
          //top right quadrant
-        [self topRightPush];
-        
-        CCLOG(@"push detected");
-
+        [self moveTopLine:yVal];
     }
     
-}
-
-
-
-
-
-
-
-
-// --------------------------------------------------------------------------------------------------------
-#pragma mark Push Buttons
-- (void) leftPush {
-    
-    //CCLOG(@"leftPush button pressed");
-    
-    [leftPush.parent addChild:hitMarkL];
-    
-//    if (pushaT == 1) {
-//        pushaT = 0;
-        [self moveBottomLine:yVal];
-
-}
-
-- (void) rightPush {
-    
-    //CCLOG(@"rightPush button pressed");
-    
-//    if (pushaT == 0) {
-//        pushaT = 1;
-        [self moveBottomLine:yVal];
-    
-}
-
--(void) topRightPush {
-    
-    //CCLOG(@"topRightPush button pressed");
-    
-    //    if (pushaT == 0) {
-    //        pushaT = 1;
-    [self moveTopLine:yVal];
-}
-
--(void) topLeftPush {
-    
-    //CCLOG(@"topLeftPush button pressed");
-    
-    //    if (pushaT == 0) {
-    //        pushaT = 1;
-    [self moveTopLine:yVal];
     
 }
 
@@ -150,7 +82,6 @@
 #pragma mark moving the lines
 
 - (void) moveBottomLine: (int) dDist {
-    
     //Move the top and bottom lines at the same time.
     BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
     TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y + dDist);
@@ -162,13 +93,13 @@
     TopLeftLine.positionInPoints = ccp(TopLeftLine.positionInPoints.x, TopLeftLine.positionInPoints.y + dDist);
 
     //NSLog(@"The bottom line should be moving");
-    
+
     //hitMarkL = (CCParticleSystem *)[CCBReader load:@"hitMarker"];
     //NSLog(@"hitmark");
 }
 
 - (void) moveTopLine: (int) dDist {
-    
+    //Move the top and bottom lines at the same time.
     TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y - dDist);
     BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y - dDist);
     
