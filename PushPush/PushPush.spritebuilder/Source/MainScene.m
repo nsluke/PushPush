@@ -23,7 +23,16 @@
     
 }
 
-
+- (void) Endless {
+    
+    CCLOG(@"endless button pressed");
+    
+    CCScene *endlessScene = [CCBReader loadAsScene:@"EndlessScene"];
+    [[CCDirector sharedDirector] replaceScene:endlessScene];
+    
+    CCLOG(@"endless button stop");
+    
+}
 
 
 
