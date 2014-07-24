@@ -11,22 +11,28 @@
 
 @implementation EndlessScene{
 
+//color nodes
 CCNodeColor *TopLeftLine;
 CCNodeColor *TopMidLine;
 CCNodeColor *TopRightLine;
 CCNodeColor *BottomLeftLine;
 CCNodeColor *BottomMidLine;
 CCNodeColor *BottomRightLine;
-
+//gradient color nodes
 CCNodeGradient *MWD;
 CCNodeGradient *RWD;
 CCNodeGradient *LWD;
 
-//CCButton *rightPush;
-//CCButton *leftPush;
+//particles
+CCParticleSystem *PUM;
+CCParticleSystem *PUL;
+CCParticleSystem *PUR;
 
-//CCParticleSystem *hitMarkL;
+CCParticleSystem *PDM;
+CCParticleSystem *PDR;
+CCParticleSystem *PDL;
 
+//ints
 int yVal;
 int pushaT;
 
@@ -41,10 +47,10 @@ int pushaT;
 -(id) init {
     self = [super init];
     if (self) {
-        
     }
     return self;
 }
+
 
 - (void) didLoadFromCCB {
     yVal = 20;
@@ -52,7 +58,6 @@ int pushaT;
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     self.multipleTouchEnabled = TRUE;
-    
 }
 
 // --------------------------------------------------------------------------------------------------------
@@ -60,97 +65,162 @@ int pushaT;
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     
-    //NSArray *touchArray = [touch allObjects];
-    
-    
     CGPoint touchLocation = [touch locationInWorld];
     
-    
-    if (touchLocation.x<SW/2 && touchLocation.y<SH/2){
-        //bottom left quadrant
+    // --- bottom lines ---
+    if (touchLocation.x<SW/3 && touchLocation.y<SH/2){
+        //bottom left
+        [self moveBottomLeftLine:yVal];
+    }
+    else if (touchLocation.x>SW/1.5 && touchLocation.y<SH/2){
+        //bottom right
+        [self moveBottomRightLine:yVal];
+    }
+    else if (touchLocation.x>SW/3 &&
+             touchLocation.x<SW/1.5 &&
+             touchLocation.y<SH/2){
+        //bottom middle
         [self moveBottomLine:yVal];
     }
-    else if (touchLocation.x>SW/2 && touchLocation.y<SH/2){
-        //bottom right quadrant
-        [self moveBottomLine:yVal];
+    // --------------------
+    
+    // ---- top lines ----
+    else if (touchLocation.x<SW/3 && touchLocation.y>SH/2){
+        //top left
+        [self moveTopLeftLine:yVal];
     }
-    else if (touchLocation.x<SW/2 && touchLocation.y>SH/2){
-        //top left quadrant
+    else if (touchLocation.x>SW/1.5 && touchLocation.y>SH/2){
+        //top right
+        [self moveTopRightLine:yVal];
+    }
+    else if (touchLocation.x>SW/3 &&
+             touchLocation.x<SW/1.5 &&
+             touchLocation.y>SH/2){
+        //top middle
         [self moveTopLine:yVal];
     }
-    else if (touchLocation.x>SW/2 && touchLocation.y>SH/2){
-        //top right quadrant
-        [self moveTopLine:yVal];
-    }
-    
-    //CCLOG(@"%n" (MWD.positionInPoints.y));
-    
-    
+    // --------------------
+
 }
 
 // --------------------------------------------------------------------------------------------------------
-#pragma mark moving the lines
+#pragma mark moving the bottom lines
 
-- (void) moveBottomLine: (int) dDist {
-    
-    //Middle Lines
-    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
-    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y + dDist);
-    
+- (void) moveBottomRightLine: (int) dDist {
     //Right Lines
     BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y + dDist);
     TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y + dDist);
     
+    //Move the Windicator
+    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y + dDist);
+    
+    //Move the Particle Systems
+    PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y + dDist);
+    PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y + dDist);
+
+    
+    if (RWD.positionInPoints.y > SH) {
+        [self victory];
+    }
+}
+
+- (void) moveBottomLeftLine: (int) dDist {
     //Left Lines
     BottomLeftLine.positionInPoints = ccp(BottomLeftLine.positionInPoints.x, BottomLeftLine.positionInPoints.y + dDist);
     TopLeftLine.positionInPoints = ccp(TopLeftLine.positionInPoints.x, TopLeftLine.positionInPoints.y + dDist);
     
-    //Move the Windicators
-    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y + dDist);
+    //Move the Windicator
     LWD.positionInPoints = ccp(LWD.positionInPoints.x, LWD.positionInPoints.y + dDist);
-    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y + dDist);
     
-    if (MWD.positionInPoints.y > SH || LWD.positionInPoints.y > SH || RWD.positionInPoints.y > SH) {
-        
-        [self pause];
+    //Move the Particle Systems
+    PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y + dDist);
+    PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y + dDist);
+
+    
+    if (LWD.positionInPoints.y > SH) {
+        [self victory];
     }
-    
-    
-    //NSLog(@"The bottom line should be moving");
-    
-    //hitMarkL = (CCParticleSystem *)[CCBReader load:@"hitMarker"];
-    //NSLog(@"hitmark");
 }
 
-- (void) moveTopLine: (int) dDist {
-    
+- (void) moveBottomLine: (int) dDist {
     //Middle Lines
-    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y - dDist);
-    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y - dDist);
+    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
+    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y + dDist);
+
+    //Move the Windicator
+    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y + dDist);
     
+    //Move the Particle Systems
+    PDM.positionInPoints = ccp(PDM.positionInPoints.x, PDM.positionInPoints.y + dDist);
+    PUM.positionInPoints = ccp(PUM.positionInPoints.x, PUM.positionInPoints.y + dDist);
+    
+    CCParticleSystem *hitMarkMiddle = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
+    hitMarkMiddle.autoRemoveOnFinish = TRUE;
+    hitMarkMiddle.position = MWD.position;
+    [BottomMidLine.parent addChild:hitMarkMiddle];
+    [hitMarkMiddle removeFromParent];
+    
+    if (MWD.positionInPoints.y > SH) {
+        [self victory];
+    }
+}
+
+// --------------------------------------------------------------------------------------------------------
+#pragma mark moving the top lines
+
+
+- (void) moveTopRightLine: (int) dDist {
     //Right Lines
     TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y - dDist);
     BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y - dDist);
+
+    //Move the Windicator
+    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y - dDist);
     
+    //Move the Particle Systems
+    PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y - dDist);
+    PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y - dDist);
+
+    if (RWD.positionInPoints.y < 0){
+        [self victory2];
+    }
+}
+
+- (void) moveTopLeftLine: (int) dDist {
     //Left Lines
     TopLeftLine.positionInPoints = ccp(TopLeftLine.positionInPoints.x, TopLeftLine.positionInPoints.y - dDist);
     BottomLeftLine.positionInPoints = ccp(BottomLeftLine.positionInPoints.x, BottomLeftLine.positionInPoints.y - dDist);
     
-    //Move the Windicators
-    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y - dDist);
+    //Move the Windicator
     LWD.positionInPoints = ccp(LWD.positionInPoints.x, LWD.positionInPoints.y - dDist);
-    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y - dDist);
     
-    if (MWD.positionInPoints.y < 0 || LWD.positionInPoints.y < 0 || RWD.positionInPoints.y < 0){
-        
-        [self pause];
+    //Move the Particle Systems
+    PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y - dDist);
+    PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y - dDist);
+    
+    if (LWD.positionInPoints.y < 0){
+        [self victory2];
     }
+}
+
+- (void) moveTopLine: (int) dDist {
+    //Middle Lines
+    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y - dDist);
+    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y - dDist);
     
+
+    //Move the Windicator
+    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y - dDist);
     
-    //NSLog(@"The top line should be moving");
+    //Move the Particle Systems
+    PDM.positionInPoints = ccp(PDM.positionInPoints.x, PDM.positionInPoints.y - dDist);
+    PUM.positionInPoints = ccp(PUM.positionInPoints.x, PUM.positionInPoints.y - dDist);
+
     
-    //hitMarkL = (CCParticleSystem *)[CCBReader load:@"hitMarker"];
-    //NSLog(@"hitmark");
+    //check for win
+    if (MWD.positionInPoints.y < 0){
+        [self victory2];
+    }
 }
 
 // --------------------------------------------------------------------------------------------------------
@@ -171,11 +241,10 @@ int pushaT;
 
 - (void) doubleLeftRightSwipe {
     CCLOG(@"player doubleLeftRightSwipe");
-    
 }
+
 - (void) downSwipe {
     CCLOG(@"player swiped down");
-    
 }
 
 // --------------------------------------------------------------------------------------------------------
@@ -188,5 +257,20 @@ int pushaT;
     [[CCDirector sharedDirector] replaceScene:mainScene];
     
 }
+
+- (void) victory {
+    
+    CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
+    [[CCDirector sharedDirector] replaceScene:gameOver];
+    
+}
+
+- (void) victory2 {
+    
+    CCScene *gameOver2 = [CCBReader loadAsScene:@"GameOver2"];
+    [[CCDirector sharedDirector] replaceScene:gameOver2];
+    
+}
+
 
 @end

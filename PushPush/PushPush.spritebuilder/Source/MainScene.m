@@ -9,6 +9,7 @@
 #import "MainScene.h"
 
 @implementation MainScene {
+    
 }
 
 
@@ -34,7 +35,16 @@
     
 }
 
-
+- (void) Versus {
+    
+    CCLOG(@"versus button pressed");
+    
+    CCScene *charSelectScene = [CCBReader loadAsScene:@"CharacterSelectScene"];
+    [[CCDirector sharedDirector] replaceScene:charSelectScene];
+    
+    CCLOG(@"versus button stop");
+    
+}
 
 
 

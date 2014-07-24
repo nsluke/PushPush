@@ -136,7 +136,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>AppleGothic</string>
+								<string>ccbResources/pixel.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -351,7 +351,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>AppleGothic</string>
+								<string>ccbResources/pixel.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -517,7 +517,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>43</real>
+											<real>88</real>
 											<real>20</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -555,7 +555,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>Versus</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -600,7 +600,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>Versus</string>
+											<string>Character Select</string>
 											<false/>
 										</array>
 									</dict>
@@ -683,7 +683,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>Helvetica</string>
+										<string>ccbResources/pixel.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -843,7 +843,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>43</real>
+											<real>88</real>
 											<real>110</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -926,7 +926,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>Endless</string>
+											<string>3 LINES</string>
 											<false/>
 										</array>
 									</dict>
@@ -1009,7 +1009,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>Helvetica</string>
+										<string>ccbResources/pixel.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1136,8 +1136,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1171,7 +1169,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>43</real>
+											<real>88</real>
 											<real>200</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1254,7 +1252,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>Arcade</string>
+											<string>1 LINE</string>
 											<false/>
 										</array>
 									</dict>
@@ -1337,7 +1335,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>Helvetica</string>
+										<string>ccbResources/pixel.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
