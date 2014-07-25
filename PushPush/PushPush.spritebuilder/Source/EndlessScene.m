@@ -7,7 +7,6 @@
 //
 
 #import "EndlessScene.h"
-#import "FormationHandler.h"
 
 @implementation EndlessScene{
 
@@ -182,7 +181,7 @@ int pushaT;
     PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y - dDist);
 
     if (RWD.positionInPoints.y < 0){
-        [self victory2];
+        [self victory];
     }
 }
 
@@ -199,7 +198,7 @@ int pushaT;
     PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y - dDist);
     
     if (LWD.positionInPoints.y < 0){
-        [self victory2];
+        [self victory];
     }
 }
 
@@ -219,7 +218,7 @@ int pushaT;
     
     //check for win
     if (MWD.positionInPoints.y < 0){
-        [self victory2];
+        [self victory];
     }
 }
 
@@ -263,13 +262,9 @@ int pushaT;
     CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
     [[CCDirector sharedDirector] replaceScene:gameOver];
     
-}
+    //[GameState sharedInstance].p1Score += 1;
+    //[GameState sharedInstance].p2Score += 1;
 
-- (void) victory2 {
-    
-    CCScene *gameOver2 = [CCBReader loadAsScene:@"GameOver2"];
-    [[CCDirector sharedDirector] replaceScene:gameOver2];
-    
 }
 
 

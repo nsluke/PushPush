@@ -7,9 +7,8 @@
 //
 
 #import "ArcadeScene.h"
-#import "FormationHandler.h"
 
-@implementation ArcadeScene{
+@implementation ArcadeScene {
     
     CCNodeColor *TopLeftLine;
     CCNodeColor *TopMidLine;
@@ -25,13 +24,8 @@
     CCButton *rightPush;
     CCButton *leftPush;
     
-    CCParticleSystem *hitMarkL;
-    
     int yVal;
     int pushaT;
-    
-    FormationHandler *BottomHandler;
-    FormationHandler *TopHandler;
     
 #define SW [[CCDirector sharedDirector] viewSize].width
 #define SH [[CCDirector sharedDirector] viewSize].height
@@ -108,13 +102,13 @@
     MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y + dDist);
     LWD.positionInPoints = ccp(LWD.positionInPoints.x, LWD.positionInPoints.y + dDist);
     RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y + dDist);
-
+    
     if (MWD.positionInPoints.y > SH || LWD.positionInPoints.y > SH || RWD.positionInPoints.y > SH){
         
         [self pause];
     }
     
-    
+    //[self hitmarked];
 
 }
 
@@ -142,11 +136,30 @@
     if (MWD.positionInPoints.y < 0 || LWD.positionInPoints.y < 0 || RWD.positionInPoints.y < 0){
         [self pause];
     }
+    
+    //[self hitmarked];
 }
+
+/*
+- (void) hitmarked {
+    // load particle effect
+    CCParticleSystem *hitMark = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
+    
+    // make the particle effect clean itself up, once it is completed
+    hitMark.autoRemoveOnFinish = TRUE;
+    
+    // place the particle effect on the seals position
+    hitMark.position = MWD.position;
+    
+    // add the particle effect to the same node the seal is on
+    [MWD.parent addChild:hitMark];
+    
+}
+*/
 
  // --------------------------------------------------------------------------------------------------------
  #pragma mark Swiping
- 
+ /*
  - (void) rightSwipe {
     CCLOG(@"player swiped right");
     [BottomHandler rightPush];
@@ -168,7 +181,8 @@
      CCLOG(@"player swiped down");
  
 }
- 
+ */
+
 // --------------------------------------------------------------------------------------------------------
 #pragma mark Pause button
 

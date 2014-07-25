@@ -36,11 +36,9 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
-		D518ED471970681100923DC1 /* FormationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED421970681100923DC1 /* FormationHandler.m */; };
-		D518ED5719707AAC00923DC1 /* Line2.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5619707AAC00923DC1 /* Line2.m */; };
 		D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5919707FAF00923DC1 /* ArcadeScene.m */; };
 		D54B287B197F1ADF00D0580E /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = D54B287A197F1ADF00D0580E /* GameOver.m */; };
-		D54B287F198027D800D0580E /* GameOver2.m in Sources */ = {isa = PBXBuildFile; fileRef = D54B287E198027D800D0580E /* GameOver2.m */; };
+		D58407B91982F46200A18024 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = D58407B81982F46200A18024 /* GameState.m */; };
 		D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */; };
 		D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5ED009219785A9C00A57786 /* EndlessScene.m */; };
 /* End PBXBuildFile section */
@@ -97,16 +95,12 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		D518ED411970681100923DC1 /* FormationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormationHandler.h; path = Source/FormationHandler.h; sourceTree = "<group>"; };
-		D518ED421970681100923DC1 /* FormationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormationHandler.m; path = Source/FormationHandler.m; sourceTree = "<group>"; };
-		D518ED5519707AAC00923DC1 /* Line2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line2.h; path = Source/Line2.h; sourceTree = "<group>"; };
-		D518ED5619707AAC00923DC1 /* Line2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line2.m; path = Source/Line2.m; sourceTree = "<group>"; };
 		D518ED5819707FAF00923DC1 /* ArcadeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcadeScene.h; sourceTree = "<group>"; };
 		D518ED5919707FAF00923DC1 /* ArcadeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcadeScene.m; sourceTree = "<group>"; };
 		D54B2879197F1ADF00D0580E /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		D54B287A197F1ADF00D0580E /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
-		D54B287D198027D800D0580E /* GameOver2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver2.h; sourceTree = "<group>"; };
-		D54B287E198027D800D0580E /* GameOver2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver2.m; sourceTree = "<group>"; };
+		D58407B71982F46200A18024 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		D58407B81982F46200A18024 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectScene.h; sourceTree = "<group>"; };
 		D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSelectScene.m; sourceTree = "<group>"; };
 		D5ED009119785A9C00A57786 /* EndlessScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndlessScene.h; path = Source/EndlessScene.h; sourceTree = "<group>"; };
@@ -150,20 +144,16 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				D54B2879197F1ADF00D0580E /* GameOver.h */,
 				D54B287A197F1ADF00D0580E /* GameOver.m */,
-				D54B287D198027D800D0580E /* GameOver2.h */,
-				D54B287E198027D800D0580E /* GameOver2.m */,
+				D58407B71982F46200A18024 /* GameState.h */,
+				D58407B81982F46200A18024 /* GameState.m */,
 				D5ED009119785A9C00A57786 /* EndlessScene.h */,
 				D5ED009219785A9C00A57786 /* EndlessScene.m */,
 				D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */,
 				D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */,
 				D518ED5819707FAF00923DC1 /* ArcadeScene.h */,
 				D518ED5919707FAF00923DC1 /* ArcadeScene.m */,
-				D518ED5519707AAC00923DC1 /* Line2.h */,
-				D518ED5619707AAC00923DC1 /* Line2.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
-				D518ED411970681100923DC1 /* FormationHandler.h */,
-				D518ED421970681100923DC1 /* FormationHandler.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -376,14 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				D58407B91982F46200A18024 /* GameState.m in Sources */,
 				D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */,
-				D54B287F198027D800D0580E /* GameOver2.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				D54B287B197F1ADF00D0580E /* GameOver.m in Sources */,
 				D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */,
 				D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */,
-				D518ED5719707AAC00923DC1 /* Line2.m in Sources */,
-				D518ED471970681100923DC1 /* FormationHandler.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +475,7 @@
 				);
 				PRODUCT_NAME = PushPush;
 				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
