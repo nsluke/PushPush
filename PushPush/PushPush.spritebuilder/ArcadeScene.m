@@ -108,7 +108,7 @@
         [self pause];
     }
     
-    //[self hitmarked];
+    [self hitmarked];
 
 }
 
@@ -137,10 +137,10 @@
         [self pause];
     }
     
-    //[self hitmarked];
+    [self hitmarked];
 }
 
-/*
+
 - (void) hitmarked {
     // load particle effect
     CCParticleSystem *hitMark = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
@@ -155,33 +155,13 @@
     [MWD.parent addChild:hitMark];
     
 }
-*/
+
 
  // --------------------------------------------------------------------------------------------------------
- #pragma mark Swiping
- /*
- - (void) rightSwipe {
-    CCLOG(@"player swiped right");
-    [BottomHandler rightPush];
-}
- 
- - (void) leftSwipe {
-    CCLOG(@"player swiped left");
-}
- 
- - (void) doubleUpSwipe {
-     CCLOG(@"player double swiped up");
-}
- 
- - (void) doubleLeftRightSwipe {
-     CCLOG(@"player doubleLeftRightSwipe");
-     
-}
- - (void) downSwipe {
-     CCLOG(@"player swiped down");
- 
-}
- */
+
+
+
+
 
 // --------------------------------------------------------------------------------------------------------
 #pragma mark Pause button

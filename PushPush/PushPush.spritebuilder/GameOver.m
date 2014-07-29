@@ -7,6 +7,7 @@
 //
 
 #import "GameOver.h"
+#import "GameState.h"
 
 @implementation GameOver {
     CCLabelTTF *p1Label;
@@ -30,27 +31,31 @@
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     
-    p1Label.string = @"0";
-    p2Label.string = @"0";
+    p1Label.string = [NSString stringWithFormat: @"%d", [GameState sharedInstance].p1Score];
+    p2Label.string = [NSString stringWithFormat: @"%d", [GameState sharedInstance].p2Score];
     
-    p1Label2.string = @"YOU WIN :-)";
-    p2Label2.string = @"YOU LOSE :-(";
+    if ([GameState sharedInstance].wInteger == 1) {
+        
+        p1Label2.string = @"YOU WIN :-)";
+        p2Label2.string = @"YOU LOSE :-(";
+        
+    } else if ([GameState sharedInstance].wInteger == 2) {
+        p1Label2.string = @"YOU LOSE :-(";
+        p2Label2.string = @"YOU WIN :-)";
+    }
+
 }
 
 
 - (void) endless {
-    
     CCScene *endlessScene = [CCBReader loadAsScene:@"EndlessScene"];
-    [[CCDirector sharedDirector] replaceScene:endlessScene];
-    
+    [[CCDirector sharedDirector] replaceScene:endlessScene]; 
 }
 
 
 - (void) main {
-    
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:mainScene];
-    
 }
 
 @end

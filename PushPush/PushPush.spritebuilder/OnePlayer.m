@@ -1,15 +1,14 @@
 //
-//  EndlessScene.m
+//  OnePlayer.m
 //  PushPush
 //
-//  Created by Luke Solomon on 7/17/14.
+//  Created by Luke Solomon on 7/29/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
-
-#import "EndlessScene.h"
 #import "GameState.h"
+#import "OnePlayer.h"
 
-@implementation EndlessScene {
+@implementation OnePlayer {
 
 //color nodes
 CCNodeColor *TopLeftLine;
@@ -42,8 +41,6 @@ CCParticleSystem *TLP;
 int yVal;
 int pushaT;
 
-
-
 #define SW [[CCDirector sharedDirector] viewSize].width
 #define SH [[CCDirector sharedDirector] viewSize].height
 
@@ -56,24 +53,19 @@ int pushaT;
     return self;
 }
 
-- (void)dealloc {
-    [TopLeftLine removeFromParent];
-}
-
 
 - (void) didLoadFromCCB {
     yVal = 20;
     
     // tell this scene to accept touches
-    self.userInteractionEnabled = TRUE;
     self.multipleTouchEnabled = TRUE;
     
-       [self loadColors];
+    [self loadColors];
     
 }
 
 - (void) loadColors {
-    // --------------------------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     //this is the section where we load the colors!
     //color nodes
     TopLeftLine.color = [GameState sharedInstance].p2Color;
@@ -122,7 +114,7 @@ int pushaT;
 }
 
 
-// --------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark Touch Input
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -162,10 +154,10 @@ int pushaT;
         [self moveTopLine:yVal];
     }
     // --------------------
-
+    
 }
 
-// --------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark moving the bottom lines
 
 - (void) moveBottomRightLine: (int) dDist {
@@ -179,13 +171,13 @@ int pushaT;
     //Move the Particle Systems
     PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y + dDist);
     PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y + dDist);
-
+    
     
     if (RWD.positionInPoints.y > SH) {
         
         [GameState sharedInstance].wInteger = 1;
         [GameState sharedInstance].p1Score ++;
-
+        
         [self victory];
     }
 }
@@ -201,13 +193,13 @@ int pushaT;
     //Move the Particle Systems
     PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y + dDist);
     PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y + dDist);
-
+    
     
     if (LWD.positionInPoints.y > SH) {
         
         [GameState sharedInstance].wInteger = 1;
         [GameState sharedInstance].p1Score ++;
-
+        
         [self victory];
     }
 }
@@ -216,7 +208,7 @@ int pushaT;
     //Middle Lines
     BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
     TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y + dDist);
-
+    
     //Move the Windicator
     MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y + dDist);
     
@@ -228,12 +220,12 @@ int pushaT;
         
         [GameState sharedInstance].wInteger = 1;
         [GameState sharedInstance].p1Score ++;
-
+        
         [self victory];
     }
 }
 
-// --------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark moving the top lines
 
 
@@ -241,19 +233,19 @@ int pushaT;
     //Right Lines
     TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y - dDist);
     BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y - dDist);
-
+    
     //Move the Windicator
     RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y - dDist);
     
     //Move the Particle Systems
     PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y - dDist);
     PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y - dDist);
-
+    
     if (RWD.positionInPoints.y < 0){
         
         [GameState sharedInstance].wInteger = 2;
         [GameState sharedInstance].p2Score ++;
-
+        
         [self victory];
     }
 }
@@ -274,7 +266,7 @@ int pushaT;
         
         [GameState sharedInstance].wInteger = 2;
         [GameState sharedInstance].p2Score ++;
-
+        
         [self victory];
     }
 }
@@ -284,14 +276,14 @@ int pushaT;
     TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y - dDist);
     BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y - dDist);
     
-
+    
     //Move the Windicator
     MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y - dDist);
     
     //Move the Particle Systems
     PDM.positionInPoints = ccp(PDM.positionInPoints.x, PDM.positionInPoints.y - dDist);
     PUM.positionInPoints = ccp(PUM.positionInPoints.x, PUM.positionInPoints.y - dDist);
-
+    
     //hitmarking
     //[self hitmarked];
     
@@ -300,32 +292,45 @@ int pushaT;
         
         [GameState sharedInstance].wInteger = 2;
         [GameState sharedInstance].p2Score ++;
-
+        
         [self victory];
     }
 }
 
-// --------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark Hitmark
 
 /*
-- (void) hitmarked {
-    // load particle effect
-    CCParticleSystem *hitMark = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
+ - (void) hitmarked {
+ // load particle effect
+ CCParticleSystem *hitMark = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
+ 
+ // make the particle effect clean itself up, once it is completed
+ hitMark.autoRemoveOnFinish = TRUE;
+ 
+ // place the particle effect on the MWD position
+ hitMark.position = MWD.position;
+ 
+ // add the particle effect to the same node the seal is on
+ [MWD addChild:hitMark];
+ 
+ }
+ */
+
+// -------------------------------------------------------------------------------
+#pragma mark AI
+
+- (void) enemyColors {
+    //
     
-    // make the particle effect clean itself up, once it is completed
-    hitMark.autoRemoveOnFinish = TRUE;
     
-    // place the particle effect on the MWD position
-    hitMark.position = MWD.position;
     
-    // add the particle effect to the same node the seal is on
-    [MWD addChild:hitMark];
+    
     
 }
-*/
 
-// --------------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
 #pragma mark Pause button
 
 - (void) pause {
@@ -342,11 +347,5 @@ int pushaT;
     [[CCDirector sharedDirector] replaceScene:gameOver];
     
 }
-
-- (void) unload {
-    
-}
-
-
 
 @end

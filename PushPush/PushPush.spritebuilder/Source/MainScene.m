@@ -7,11 +7,15 @@
 //
 
 #import "MainScene.h"
+#import "GameState.h"
 
 @implementation MainScene {
     
 }
 
+- (void) didLoadFromCCB {
+    //[GameState sharedInstance].colorsLoaded = false;
+}
 
 - (void) play {
     

@@ -26,14 +26,15 @@
     return _sharedObject;
 }
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-
-    }
-    
-    return self;
-}
+//
+//- (instancetype)init {
+//    self = [super init];
+//    
+//    if (self) {
+//
+//    }
+//    
+//    return self;
+//}
 
 @end

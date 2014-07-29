@@ -10,4 +10,15 @@
 
 @interface GameState : NSObject
 
+@property (nonatomic, assign) NSInteger p1Score;
+@property (nonatomic, assign) NSInteger p2Score;
+@property (nonatomic, assign) NSInteger wInteger;
+
+@property (nonatomic, assign) CCColor *p1Color;
+@property (nonatomic, assign) CCColor *p2Color;
+
+@property (nonatomic, assign) bool colorsLoaded;
+
++ (instancetype)sharedInstance;
+
 @end
