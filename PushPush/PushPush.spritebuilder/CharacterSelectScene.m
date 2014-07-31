@@ -93,6 +93,7 @@
                                       alpha:1.0f];
 }
 
+
 - (void) white {
     if (toggle == 1){
         [p1Node setColor: white1];
@@ -144,31 +145,22 @@
 
 - (void) Yellow {
     if (toggle == 1){
+        
         [p1Node setColor: yellow1];
         [backgroundGradient setEndColor: yellow1];
-        
-        
-        
-        
-        //[GameState sharedInstance].p1Color = yellow1;
-        [GameState sharedInstance].testFloat = 255;
-        [CCColor colorWithRed: [GameState sharedInstance].testFloat/255.0f
-                         green:255.0f/255.0f
-                          blue:0.0f/255.0f
-                         alpha:1.0f];
-        
-        
-        
+
+        [GameState sharedInstance].p1Color = yellow1;
+         
+
     } else if (toggle == 2){
         [p2Node setColor: yellow1];
         [backgroundGradient setStartColor: yellow1];
         
         [GameState sharedInstance].p2Color = yellow1;
-        
     }
     [self PlayerSelect];
 }
-
+ 
 - (void) Green {
     if (toggle == 1){
         [p1Node setColor: green1];
@@ -185,7 +177,6 @@
     }
     [self PlayerSelect];
 }
-
 
 - (void) Blue {
     if (toggle == 1){
@@ -261,6 +252,38 @@
     [self PlayerSelect];
 }
 
+
+
+
+//-(void) Yellow {
+//    if (toggle ==1 ) {
+//        
+//        [GameState sharedInstance].testFloat1 = 255;
+//        [GameState sharedInstance].testFloat2 = 255;
+//        [GameState sharedInstance].testFloat3 = 255;
+//        
+//    } else if (toggle == 2){
+//        
+//        [GameState sharedInstance].testFloat4 = 255;
+//        [GameState sharedInstance].testFloat5 = 255;
+//        [GameState sharedInstance].testFloat6 = 255;
+//        
+//    }
+//    
+//    [self PlayerSelect];
+//    
+//    //[CCColor colorWithRed:[GameState sharedInstance].testFloat1/255.0f
+//    //green:[GameState sharedInstance].testFloat2/255.0f
+//    //blue:[GameState sharedInstance].testFloat3/255.0f
+//    //alpha:1.0f];
+//
+//}
+
+
+
+
+
+
 - (void) PlayerSelect {
     
     if (toggle == 1) {
@@ -270,7 +293,6 @@
 
         toggle = 2;
         NSLog(@"toggle is now %d", toggle);
-        
         
     } else if (toggle == 2) {
         

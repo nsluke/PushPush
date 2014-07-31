@@ -76,7 +76,7 @@ int pushaT;
     // --------------------------------------------------------------------------------------------------------
     //this is the section where we load the colors!
     //color nodes
-    NSLog(@"THIS IS THE TEST FLOAT =----= %ld", (long)[GameState sharedInstance].testFloat);
+    //NSLog(@"THIS IS THE TEST FLOAT =----= %ld", (long)[GameState sharedInstance].testFloat);
           
     NSLog(@"%ld", (long)[GameState sharedInstance].p2Score);
     
