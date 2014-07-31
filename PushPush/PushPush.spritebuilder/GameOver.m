@@ -31,8 +31,8 @@
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     
-    p1Label.string = [NSString stringWithFormat: @"%d", [GameState sharedInstance].p1Score];
-    p2Label.string = [NSString stringWithFormat: @"%d", [GameState sharedInstance].p2Score];
+    p1Label.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].p1Score];
+    p2Label.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].p2Score];
     
     if ([GameState sharedInstance].wInteger == 1) {
         
@@ -49,7 +49,7 @@
 
 - (void) endless {
     CCScene *endlessScene = [CCBReader loadAsScene:@"EndlessScene"];
-    [[CCDirector sharedDirector] replaceScene:endlessScene]; 
+    [[CCDirector sharedDirector] replaceScene:endlessScene];
 }
 
 

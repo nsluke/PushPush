@@ -28,7 +28,8 @@
     CCColor *red1;
     CCColor *white1;
 
-    
+    CCLabelTTF *pickLabel1;
+    CCLabelTTF *pickLabel2;
 
 }
 
@@ -72,10 +73,12 @@
                                       green:255.0f/255.0f
                                        blue:0.0f/255.0f
                                       alpha:1.0f];
+    
     yellow1 = [CCColor colorWithRed:255.0f/255.0f
-                                       green:255.0f/255.0f
-                                        blue:0.0f/255.0f
-                                       alpha:1.0f];
+                              green:255.0f/255.0f
+                               blue:0.0f/255.0f
+                              alpha:1.0f];
+    
     orange1 = [CCColor colorWithRed:255.0f/255.0f
                                        green:165.0f/255.0f
                                         blue:0.0f/255.0f
@@ -144,7 +147,17 @@
         [p1Node setColor: yellow1];
         [backgroundGradient setEndColor: yellow1];
         
-        [GameState sharedInstance].p1Color = yellow1;
+        
+        
+        
+        //[GameState sharedInstance].p1Color = yellow1;
+        [GameState sharedInstance].testFloat = 255;
+        [CCColor colorWithRed: [GameState sharedInstance].testFloat/255.0f
+                         green:255.0f/255.0f
+                          blue:0.0f/255.0f
+                         alpha:1.0f];
+        
+        
         
     } else if (toggle == 2){
         [p2Node setColor: yellow1];
@@ -231,13 +244,18 @@
         [p1Node setColor: black1];
         [backgroundGradient setEndColor: black1];
         
-        [GameState sharedInstance].p1Color = black1;
+        //if ([self arePlayersSameColor]){
+            [GameState sharedInstance].p1Color = black1;
+        //}
+        
         
     } else if (toggle == 2){
         [p2Node setColor: black1];
         [backgroundGradient setStartColor: black1];
         
-        [GameState sharedInstance].p2Color = black1;
+        //if ([self arePlayersSameColor]){
+            [GameState sharedInstance].p2Color = black1;
+        //}
         
     }
     [self PlayerSelect];
@@ -247,20 +265,38 @@
     
     if (toggle == 1) {
         
+        pickLabel1.string = @"";
+        pickLabel2.string = @"PICK A COLOR";
+
         toggle = 2;
         NSLog(@"toggle is now %d", toggle);
         
+        
     } else if (toggle == 2) {
+        
+        pickLabel1.string = @"PICK A COLOR";
+        pickLabel2.string = @"";
         
         toggle = 1;
         NSLog(@"toggle is now %d", toggle);
-
-
+ 
     }
-    
-    
+
 }
 
+/*
+- (BOOL) arePlayersSameColor {
+    
+    if ([GameState sharedInstance].p2Color == [GameState sharedInstance].p1Color ){
+        
+        pickLabel1.string = @"YOU CAN'T BOTH BE THE SAME COLOR!";
+        pickLabel2.string = @"YOU CAN'T BOTH BE THE SAME COLOR!";
+        return false;
+    } else {
+        return true;
+    }
+}
+*/
 
 - (void) Ready {
     

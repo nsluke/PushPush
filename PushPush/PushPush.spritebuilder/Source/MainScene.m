@@ -12,9 +12,10 @@
 @implementation MainScene {
     
 }
-
+// [[CCDirector sharedDirector] popScene];
 - (void) didLoadFromCCB {
     //[GameState sharedInstance].colorsLoaded = false;
+    //GameState *state = [[GameState alloc] init];
 }
 
 - (void) play {

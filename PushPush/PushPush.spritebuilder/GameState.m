@@ -10,6 +10,7 @@
 
 @implementation GameState
 
+
 + (instancetype)sharedInstance {
     // structure used to test whether the block has completed or not
     static dispatch_once_t p = 0;
@@ -18,23 +19,26 @@
     __strong static id _sharedObject = nil;
     
     // executes a block object once and only once for the lifetime of an application
-    dispatch_once(&p, ^{
-        _sharedObject = [[self alloc]init];
-    });
+    dispatch_once(&p, ^{ _sharedObject = [[self alloc]init]; });
     
     // returns the same object each time
     return _sharedObject;
 }
 
-//
-//- (instancetype)init {
-//    self = [super init];
-//    
-//    if (self) {
-//
-//    }
-//    
-//    return self;
-//}
+- (void) setP2Color:(CCColor *)p2Color {
+    
+    _p2Color = p2Color;
+
+}
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+
+    }
+    
+    return self;
+}
 
 @end
