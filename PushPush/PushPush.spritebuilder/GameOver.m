@@ -36,12 +36,12 @@
     
     if ([GameState sharedInstance].wInteger == 1) {
         
-        p1Label2.string = @"YOU WIN :-)";
-        p2Label2.string = @"YOU LOSE :-(";
+        p1Label2.string = @"YOU WON!";
+        p2Label2.string = @"YOU LOST";
         
     } else if ([GameState sharedInstance].wInteger == 2) {
-        p1Label2.string = @"YOU LOSE :-(";
-        p2Label2.string = @"YOU WIN :-)";
+        p1Label2.string = @"YOU LOST";
+        p2Label2.string = @"YOU WON!";
     }
 
 }

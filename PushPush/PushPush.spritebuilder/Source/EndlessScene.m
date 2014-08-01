@@ -169,7 +169,6 @@ int pushaT;
         [self moveTopLine:yVal];
     }
     // --------------------
-
 }
 
 // --------------------------------------------------------------------------------------------------------
@@ -208,13 +207,13 @@ int pushaT;
     //Move the Particle Systems
     PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y + dDist);
     PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y + dDist);
-
+    
     
     if (LWD.positionInPoints.y > SH) {
         
         [GameState sharedInstance].wInteger = 1;
         [GameState sharedInstance].p1Score ++;
-
+        
         [self victory];
     }
 }
