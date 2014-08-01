@@ -11,6 +11,9 @@
 
 @implementation EndlessScene {
 
+//The test node
+CCNode *_Middle;
+    
 //color nodes
 CCNodeColor *TopLeftLine;
 CCNodeColor *TopMidLine;
@@ -73,7 +76,7 @@ int pushaT;
 }
 
 - (void) loadColors {
-    // --------------------------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------------------
     //this is the section where we load the colors!
     
     //color nodes
@@ -172,95 +175,88 @@ int pushaT;
     
     // --- bottom lines ---
     
-    if (touchLocation.x<SW/3 && touchLocation.y<SH/2){
+    if (touchLocation.x<SW/3 &&
+        touchLocation.y<SH/2){
+        
         //bottom left
         [self moveThisLine:BottomLeftLine thisFar:yVal];
+        
     }
     
-    else if (touchLocation.x>SW/1.5 && touchLocation.y<SH/2){
+    else if (touchLocation.x>SW/1.5 &&
+             touchLocation.y<SH/2){
+        
         //bottom right
         [self moveThisLine:BottomRightLine thisFar:yVal];
+        
     }
     
     else if (touchLocation.x>SW/3 &&
              touchLocation.x<SW/1.5 &&
              touchLocation.y<SH/2){
+        
         //bottom middle
         [self moveThisLine:BottomMidLine thisFar:yVal];
+        
     }
-    
     // --------------------
     
     
     
     // ---- top lines ----
     
-    else if (touchLocation.x<SW/3 && touchLocation.y>SH/2){
+    else if (touchLocation.x<SW/3 &&
+             touchLocation.y>SH/2){
+        
         //top left
         [self moveThisLine:TopLeftLine thisFar:yVal];
+        
     }
-    else if (touchLocation.x>SW/1.5 && touchLocation.y>SH/2){
+    else if (touchLocation.x>SW/1.5 &&
+             touchLocation.y>SH/2){
+        
         //top right
         [self moveThisLine:TopRightLine thisFar:yVal];
+        
     }
     else if (touchLocation.x>SW/3 &&
              touchLocation.x<SW/1.5 &&
              touchLocation.y>SH/2){
+        
         //top middle
         [self moveThisLine:TopMidLine thisFar:yVal];
+        
     }
-    
     // --------------------
 }
 
-- (void) moveThisLine: (CCNodeColor*)LineMover thisFar: (int) dDist {
-    CCNodeGradient *tempGradient;
-    CCParticleSystem *tempParticleBottom;
-    CCParticleSystem *tempParticleTop;
+- (void) moveThisLine: (CCNodeColor*)LineMover thisFar: (int)dDist {
     
-    // Lines
-    LineMover.positionInPoints = ccp(LineMover.positionInPoints.x, LineMover.positionInPoints.y + dDist);
-    LineMover.positionInPoints = ccp(LineMover.positionInPoints.x, LineMover.positionInPoints.y + dDist);
+    CCNode *whichLine;
     
-    if (LineMover == BottomMidLine || LineMover == TopMidLine){
+    NSLog (@" %@", LineMover);
+    NSLog (@"this is dDist 1 %d", dDist);
+    
+    if (LineMover == BottomMidLine || LineMover == TopMidLine) {
         
-        tempGradient = MWD;
-        tempParticleBottom = PDM;
-        tempParticleTop = PUM;
+        whichLine = _Middle;
         
-    } else if (LineMover == BottomRightLine || LineMover == TopRightLine){
-        
-        tempGradient = RWD;
-        tempParticleBottom = PDR;
-        tempParticleTop = PUR;
+        if (LineMover == BottomMidLine) {
+            
+            NSLog (@"The line's curent position is %f", _Middle.positionInPoints.y);
+            NSLog (@"this is dDist 2 %d", dDist);
 
-    } else if (LineMover == BottomLeftLine || LineMover == TopLeftLine){
+            _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
+            
+            NSLog (@"The line's new position is %f", _Middle.positionInPoints.y);
+            NSLog (@"this is dDist 3 %d", dDist);
+
+        }
+        else if (LineMover == TopMidLine) {
+            _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y - dDist);
+        }
         
-        tempGradient = RWD;
-        tempParticleBottom = PDL;
-        tempParticleTop = PUL;
-    }
-    
         
-    //Move the Windicator
-    tempGradient.positionInPoints = ccp(tempGradient.positionInPoints.x, tempGradient.positionInPoints.y + dDist);
-    
-    //Move the Particle Systems
-    tempParticleBottom.positionInPoints = ccp(tempParticleBottom.positionInPoints.x, tempParticleBottom.positionInPoints.y + dDist);
-    tempParticleTop.positionInPoints = ccp(tempParticleTop.positionInPoints.x, tempParticleTop.positionInPoints.y + dDist);
-    
-    
-    if (LineMover.positionInPoints.y > SH) {
-        
-        [GameState sharedInstance].wInteger = 1;
-        [GameState sharedInstance].p1Score ++;
-        [self victory];
-        
-    } else if (LineMover.positionInPoints.y < 0){
-        
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
-        [self victory];
     }
 }
 
@@ -333,11 +329,11 @@ int pushaT;
         [self victory];
     }
 }
-
+*/
 // --------------------------------------------------------------------------------------------------------
 #pragma mark moving the top lines
 
-
+/*
 - (void) moveTopRightLine: (int) dDist {
     //Right Lines
     TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y - dDist);
@@ -438,10 +434,25 @@ int pushaT;
     
 }
 
-- (void) victory {
+- (void) victoryCheck {
     
-    //dump ALL the nodes
-    //[self unload];
+    /*
+     how the fuck do I get the parameter of another method here?
+     
+    
+    
+    if (LineMover.positionInPoints.y > SH) {
+        
+        [GameState sharedInstance].wInteger = 1;
+        [GameState sharedInstance].p1Score ++;
+        
+    } else if (LineMover.positionInPoints.y < 0){
+        
+        [GameState sharedInstance].wInteger = 2;
+        [GameState sharedInstance].p2Score ++;
+        
+    }
+     */
     
     CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
     [[CCDirector sharedDirector] replaceScene:gameOver];
