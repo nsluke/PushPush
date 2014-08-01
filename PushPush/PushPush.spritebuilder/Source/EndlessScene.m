@@ -13,7 +13,9 @@
 
 //The test node
 CCNode *_Middle;
-    
+CCNode *_Right;
+CCNode *_Left;
+
 //color nodes
 CCNodeColor *TopLeftLine;
 CCNodeColor *TopMidLine;
@@ -43,12 +45,9 @@ CCParticleSystem *TLP;
 
 //ints
 int yVal;
-int pushaT;
-
-
-
-#define SW [[CCDirector sharedDirector] viewSize].width
-#define SH [[CCDirector sharedDirector] viewSize].height
+    
+#define SW ([[CCDirector sharedDirector] viewSize].width)
+#define SH ([[CCDirector sharedDirector] viewSize].height)
 
 }
 
@@ -71,7 +70,7 @@ int pushaT;
     self.userInteractionEnabled = TRUE;
     self.multipleTouchEnabled = TRUE;
     
-       [self loadColors];
+    [self loadColors];
     
 }
 
@@ -174,12 +173,11 @@ int pushaT;
     CGPoint touchLocation = [touch locationInWorld];
     
     // --- bottom lines ---
-    
     if (touchLocation.x<SW/3 &&
         touchLocation.y<SH/2){
         
         //bottom left
-        [self moveThisLine:BottomLeftLine thisFar:yVal];
+        [self moveThisLine:_Left thisFar:yVal];
         
     }
     
@@ -187,7 +185,7 @@ int pushaT;
              touchLocation.y<SH/2){
         
         //bottom right
-        [self moveThisLine:BottomRightLine thisFar:yVal];
+        [self moveThisLine:_Right thisFar:yVal];
         
     }
     
@@ -196,12 +194,10 @@ int pushaT;
              touchLocation.y<SH/2){
         
         //bottom middle
-        [self moveThisLine:_Middle thisFar:20];
+        [self moveThisLine:_Middle thisFar:yVal];
         
     }
     // --------------------
-    
-    
     
     // ---- top lines ----
     
@@ -209,14 +205,14 @@ int pushaT;
              touchLocation.y>SH/2){
         
         //top left
-        [self moveThisLine:TopLeftLine thisFar:yVal];
+        [self moveThisLine:_Left thisFar:-(yVal)];
         
     }
     else if (touchLocation.x>SW/1.5 &&
              touchLocation.y>SH/2){
         
         //top right
-        [self moveThisLine:TopRightLine thisFar:yVal];
+        [self moveThisLine:_Right thisFar:-(yVal)];
         
     }
     // --------------------
@@ -225,167 +221,29 @@ int pushaT;
              touchLocation.y>SH/2){
         
         //top middle
-        [self moveThisLine:_Middle thisFar:-20];
+        [self moveThisLine:_Middle thisFar:-(yVal)];
     }
     // --------------------
 }
 
 - (void) moveThisLine: (CCNode*)LineMover thisFar: (int)dDist {
     
-    
-    NSLog (@" %@", LineMover);
-    NSLog (@"this is dDist 1 %d", dDist);
-    
     if (LineMover == _Middle) {
-            _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
+        _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
+        
+        [self victoryCheck: LineMover];
+    }
+    if (LineMover == _Right) {
+        _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
+        [self victoryCheck: LineMover];
+    }
+    if (LineMover == _Left) {
+        _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
+        [self victoryCheck: LineMover];
     }
     
 }
 
-
-// --------------------------------------------------------------------------------------------------------
-#pragma mark moving the bottom lines
-
-/*
-- (void) moveBottomRightLine: (int) dDist {
-    //Right Lines
-    BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y + dDist);
-    TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y + dDist);
-    
-    //Move the Windicator
-    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y + dDist);
-    
-    //Move the Particle Systems
-    PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y + dDist);
-    PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y + dDist);
-
-    
-    if (RWD.positionInPoints.y > SH) {
-        
-        [GameState sharedInstance].wInteger = 1;
-        [GameState sharedInstance].p1Score ++;
-
-        [self victory];
-    }
-}
-
-- (void) moveBottomLeftLine: (int) dDist {
-    //Left Lines
-    BottomLeftLine.positionInPoints = ccp(BottomLeftLine.positionInPoints.x, BottomLeftLine.positionInPoints.y + dDist);
-    TopLeftLine.positionInPoints = ccp(TopLeftLine.positionInPoints.x, TopLeftLine.positionInPoints.y + dDist);
-    
-    //Move the Windicator
-    LWD.positionInPoints = ccp(LWD.positionInPoints.x, LWD.positionInPoints.y + dDist);
-    
-    //Move the Particle Systems
-    PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y + dDist);
-    PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y + dDist);
-    
-    
-    if (LWD.positionInPoints.y > SH) {
-        
-        [GameState sharedInstance].wInteger = 1;
-        [GameState sharedInstance].p1Score ++;
-        
-        [self victory];
-    }
-}
-
-- (void) moveBottomLine: (int) dDist {
-    //Middle Lines
-    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y + dDist);
-    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y + dDist);
-
-    //Move the Windicator
-    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y + dDist);
-    
-    //Move the Particle Systems
-    PDM.positionInPoints = ccp(PDM.positionInPoints.x, PDM.positionInPoints.y + dDist);
-    PUM.positionInPoints = ccp(PUM.positionInPoints.x, PUM.positionInPoints.y + dDist);
-    
-    if (MWD.positionInPoints.y > SH) {
-        
-        [GameState sharedInstance].wInteger = 1;
-        [GameState sharedInstance].p1Score ++;
-
-        [self victory];
-    }
-}
-*/
-// --------------------------------------------------------------------------------------------------------
-#pragma mark moving the top lines
-
-/*
-- (void) moveTopRightLine: (int) dDist {
-    //Right Lines
-    TopRightLine.positionInPoints = ccp(TopRightLine.positionInPoints.x, TopRightLine.positionInPoints.y - dDist);
-    BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y - dDist);
-
-    //Move the Windicator
-    RWD.positionInPoints = ccp(RWD.positionInPoints.x, RWD.positionInPoints.y - dDist);
-    
-    //Move the Particle Systems
-    PDR.positionInPoints = ccp(PDR.positionInPoints.x, PDR.positionInPoints.y - dDist);
-    PUR.positionInPoints = ccp(PUR.positionInPoints.x, PUR.positionInPoints.y - dDist);
-
-    if (RWD.positionInPoints.y < 0){
-        
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
-
-        [self victory];
-    }
-}
-
-- (void) moveTopLeftLine: (int) dDist {
-    //Left Lines
-    TopLeftLine.positionInPoints = ccp(TopLeftLine.positionInPoints.x, TopLeftLine.positionInPoints.y - dDist);
-    BottomLeftLine.positionInPoints = ccp(BottomLeftLine.positionInPoints.x, BottomLeftLine.positionInPoints.y - dDist);
-    
-    //Move the Windicator
-    LWD.positionInPoints = ccp(LWD.positionInPoints.x, LWD.positionInPoints.y - dDist);
-    
-    //Move the Particle Systems
-    PDL.positionInPoints = ccp(PDL.positionInPoints.x, PDL.positionInPoints.y - dDist);
-    PUL.positionInPoints = ccp(PUL.positionInPoints.x, PUL.positionInPoints.y - dDist);
-    
-    if (LWD.positionInPoints.y < 0){
-        
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
-
-        [self victory];
-    }
-}
-
-- (void) moveTopLine: (int) dDist {
-    //Middle Lines
-    TopMidLine.positionInPoints = ccp(TopMidLine.positionInPoints.x, TopMidLine.positionInPoints.y - dDist);
-    BottomMidLine.positionInPoints = ccp(BottomMidLine.positionInPoints.x, BottomMidLine.positionInPoints.y - dDist);
-    
-
-    //Move the Windicator
-    MWD.positionInPoints = ccp(MWD.positionInPoints.x, MWD.positionInPoints.y - dDist);
-    
-    //Move the Particle Systems
-    PDM.positionInPoints = ccp(PDM.positionInPoints.x, PDM.positionInPoints.y - dDist);
-    PUM.positionInPoints = ccp(PUM.positionInPoints.x, PUM.positionInPoints.y - dDist);
-
-    //hitmarking
-    //[self hitmarked];
-    
-    //check for win
-    if (MWD.positionInPoints.y < 0){
-        
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
-
-        [self victory];
-    }
-}
-
-*/
- 
 // --------------------------------------------------------------------------------------------------------
 #pragma mark Hitmark
 
@@ -397,10 +255,10 @@ int pushaT;
     // make the particle effect clean itself up, once it is completed
     hitMark.autoRemoveOnFinish = TRUE;
     
-    // place the particle effect on the MWD position
-    hitMark.position = MWD.position;
+    // place the particle effect on the middle position
+    hitMark.position = _Middle.position;
     
-    // add the particle effect to the same node the seal is on
+    // add the particle effect to the same node the Middle is on
     [MWD addChild:hitMark];
     
 }
@@ -416,28 +274,27 @@ int pushaT;
     
 }
 
-- (void) victoryCheck {
+- (void) victoryCheck: (CCNode*) windication {
     
-    /*
-     how the fuck do I get the parameter of another method here?
-     
-    
-    
-    if (LineMover.positionInPoints.y > SH) {
+    NSLog (@"position in y %f + SH %f ", windication.positionInPoints.y, SH);
+
+    if (windication.positionInPoints.y > SH || windication.positionInPoints.y < 0)
+    {
         
-        [GameState sharedInstance].wInteger = 1;
-        [GameState sharedInstance].p1Score ++;
-        
-    } else if (LineMover.positionInPoints.y < 0){
-        
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
-        
+        if (windication.positionInPoints.y > SH)
+        {
+            [GameState sharedInstance].wInteger = 1;
+            [GameState sharedInstance].p1Score ++;
+        }
+        else if (windication.positionInPoints.y < 0)
+        {
+            [GameState sharedInstance].wInteger = 2;
+            [GameState sharedInstance].p2Score ++;
+        }
+        CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
+        [[CCDirector sharedDirector] replaceScene:gameOver];
     }
-     */
     
-    CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
-    [[CCDirector sharedDirector] replaceScene:gameOver];
     
 }
 
