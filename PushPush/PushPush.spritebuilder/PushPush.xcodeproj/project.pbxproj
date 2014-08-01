@@ -145,12 +145,7 @@
 			children = (
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
-				D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */,
-				D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */,
-				D54B2879197F1ADF00D0580E /* GameOver.h */,
-				D54B287A197F1ADF00D0580E /* GameOver.m */,
+				D52FC606198BE12400F534F8 /* Menus */,
 				D503C93D1988096200401C77 /* Singleton */,
 				D503C93F1988097500401C77 /* Gameplay Scenes */,
 			);
@@ -255,14 +250,35 @@
 		D503C93F1988097500401C77 /* Gameplay Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D503C94319881A5A00401C77 /* OnePlayer.h */,
-				D503C94419881A5A00401C77 /* OnePlayer.m */,
+				D52FC604198BE11000F534F8 /* Useless shit */,
 				D5ED009119785A9C00A57786 /* EndlessScene.h */,
 				D5ED009219785A9C00A57786 /* EndlessScene.m */,
+			);
+			name = "Gameplay Scenes";
+			sourceTree = "<group>";
+		};
+		D52FC604198BE11000F534F8 /* Useless shit */ = {
+			isa = PBXGroup;
+			children = (
+				D503C94319881A5A00401C77 /* OnePlayer.h */,
+				D503C94419881A5A00401C77 /* OnePlayer.m */,
 				D518ED5819707FAF00923DC1 /* ArcadeScene.h */,
 				D518ED5919707FAF00923DC1 /* ArcadeScene.m */,
 			);
-			name = "Gameplay Scenes";
+			name = "Useless shit";
+			sourceTree = "<group>";
+		};
+		D52FC606198BE12400F534F8 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				B7378992180767190076A88C /* MainScene.h */,
+				B7378993180767190076A88C /* MainScene.m */,
+				D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */,
+				D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */,
+				D54B2879197F1ADF00D0580E /* GameOver.h */,
+				D54B287A197F1ADF00D0580E /* GameOver.m */,
+			);
+			name = Menus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

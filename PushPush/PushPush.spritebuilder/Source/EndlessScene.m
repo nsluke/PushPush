@@ -75,14 +75,8 @@ int pushaT;
 - (void) loadColors {
     // --------------------------------------------------------------------------------------------------------
     //this is the section where we load the colors!
+    
     //color nodes
-    //NSLog(@"THIS IS THE TEST FLOAT =----= %ld", (long)[GameState sharedInstance].testFloat);
-          
-    NSLog(@"%ld", (long)[GameState sharedInstance].p2Score);
-    
-    NSLog(@"%@", [GameState sharedInstance].p2Color);
-    NSLog(@"%@", [GameState sharedInstance].p1Color);
-    
     TopLeftLine.color = [GameState sharedInstance].p2Color;
     TopMidLine.color = [GameState sharedInstance].p2Color;
     TopRightLine.color = [GameState sharedInstance].p2Color;
@@ -131,7 +125,7 @@ int pushaT;
 
 // --------------------------------------------------------------------------------------------------------
 #pragma mark Touch Input
-
+/*
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     
     CGPoint touchLocation = [touch locationInWorld];
@@ -170,10 +164,111 @@ int pushaT;
     }
     // --------------------
 }
+*/
+
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+    
+    CGPoint touchLocation = [touch locationInWorld];
+    
+    // --- bottom lines ---
+    
+    if (touchLocation.x<SW/3 && touchLocation.y<SH/2){
+        //bottom left
+        [self moveThisLine:BottomLeftLine thisFar:yVal];
+    }
+    
+    else if (touchLocation.x>SW/1.5 && touchLocation.y<SH/2){
+        //bottom right
+        [self moveThisLine:BottomRightLine thisFar:yVal];
+    }
+    
+    else if (touchLocation.x>SW/3 &&
+             touchLocation.x<SW/1.5 &&
+             touchLocation.y<SH/2){
+        //bottom middle
+        [self moveThisLine:BottomMidLine thisFar:yVal];
+    }
+    
+    // --------------------
+    
+    
+    
+    // ---- top lines ----
+    
+    else if (touchLocation.x<SW/3 && touchLocation.y>SH/2){
+        //top left
+        [self moveThisLine:TopLeftLine thisFar:yVal];
+    }
+    else if (touchLocation.x>SW/1.5 && touchLocation.y>SH/2){
+        //top right
+        [self moveThisLine:TopRightLine thisFar:yVal];
+    }
+    else if (touchLocation.x>SW/3 &&
+             touchLocation.x<SW/1.5 &&
+             touchLocation.y>SH/2){
+        //top middle
+        [self moveThisLine:TopMidLine thisFar:yVal];
+    }
+    
+    // --------------------
+}
+
+- (void) moveThisLine: (CCNodeColor*)LineMover thisFar: (int) dDist {
+    CCNodeGradient *tempGradient;
+    CCParticleSystem *tempParticleBottom;
+    CCParticleSystem *tempParticleTop;
+    
+    // Lines
+    LineMover.positionInPoints = ccp(LineMover.positionInPoints.x, LineMover.positionInPoints.y + dDist);
+    LineMover.positionInPoints = ccp(LineMover.positionInPoints.x, LineMover.positionInPoints.y + dDist);
+    
+    if (LineMover == BottomMidLine || LineMover == TopMidLine){
+        
+        tempGradient = MWD;
+        tempParticleBottom = PDM;
+        tempParticleTop = PUM;
+        
+    } else if (LineMover == BottomRightLine || LineMover == TopRightLine){
+        
+        tempGradient = RWD;
+        tempParticleBottom = PDR;
+        tempParticleTop = PUR;
+
+    } else if (LineMover == BottomLeftLine || LineMover == TopLeftLine){
+        
+        tempGradient = RWD;
+        tempParticleBottom = PDL;
+        tempParticleTop = PUL;
+    }
+    
+        
+    //Move the Windicator
+    tempGradient.positionInPoints = ccp(tempGradient.positionInPoints.x, tempGradient.positionInPoints.y + dDist);
+    
+    //Move the Particle Systems
+    tempParticleBottom.positionInPoints = ccp(tempParticleBottom.positionInPoints.x, tempParticleBottom.positionInPoints.y + dDist);
+    tempParticleTop.positionInPoints = ccp(tempParticleTop.positionInPoints.x, tempParticleTop.positionInPoints.y + dDist);
+    
+    
+    if (LineMover.positionInPoints.y > SH) {
+        
+        [GameState sharedInstance].wInteger = 1;
+        [GameState sharedInstance].p1Score ++;
+        [self victory];
+        
+    } else if (LineMover.positionInPoints.y < 0){
+        
+        [GameState sharedInstance].wInteger = 2;
+        [GameState sharedInstance].p2Score ++;
+        [self victory];
+    }
+}
+
 
 // --------------------------------------------------------------------------------------------------------
 #pragma mark moving the bottom lines
 
+/*
 - (void) moveBottomRightLine: (int) dDist {
     //Right Lines
     BottomRightLine.positionInPoints = ccp(BottomRightLine.positionInPoints.x, BottomRightLine.positionInPoints.y + dDist);
@@ -311,6 +406,8 @@ int pushaT;
     }
 }
 
+*/
+ 
 // --------------------------------------------------------------------------------------------------------
 #pragma mark Hitmark
 
@@ -348,37 +445,6 @@ int pushaT;
     
     CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
     [[CCDirector sharedDirector] replaceScene:gameOver];
-    
-}
-
-- (void) unload {
-    
-    //color nodes
-    [TopLeftLine removeFromParent];
-    [TopMidLine removeFromParent];
-    [TopRightLine removeFromParent];
-    [BottomLeftLine removeFromParent];
-    [BottomMidLine removeFromParent];
-    [BottomRightLine removeFromParent];
-    //gradient color nodes (windicators)
-    [MWD removeFromParent];
-    [RWD removeFromParent];
-    [LWD removeFromParent];
-    
-    //particles
-    //upper particles
-    [PUM removeFromParent];
-    [PUL removeFromParent];
-    [PUR removeFromParent];
-    //lower particles
-    [PDM removeFromParent];
-    [PDR removeFromParent];
-    [PDL removeFromParent];
-    //corner particles
-    [BRP removeFromParent];
-    [BLP removeFromParent];
-    [TRP removeFromParent];
-    [TLP removeFromParent];
     
 }
 

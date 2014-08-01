@@ -517,7 +517,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>54</real>
+											<real>79</real>
 											<real>20</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -843,8 +843,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>54</real>
-											<real>110</real>
+											<real>79</real>
+											<real>85</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -926,7 +926,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>1 Player</string>
+											<string>1 Player (I don't work yet)</string>
 											<false/>
 										</array>
 									</dict>
@@ -1018,7 +1018,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>17</real>
+											<real>10</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1209,7 +1209,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>50</real>
+									<real>25</real>
 									<integer>0</integer>
 								</array>
 							</dict>
