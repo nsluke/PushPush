@@ -196,7 +196,7 @@ int pushaT;
              touchLocation.y<SH/2){
         
         //bottom middle
-        [self moveThisLine:BottomMidLine thisFar:yVal];
+        [self moveThisLine:_Middle thisFar:20];
         
     }
     // --------------------
@@ -219,45 +219,27 @@ int pushaT;
         [self moveThisLine:TopRightLine thisFar:yVal];
         
     }
+    // --------------------
     else if (touchLocation.x>SW/3 &&
              touchLocation.x<SW/1.5 &&
              touchLocation.y>SH/2){
         
         //top middle
-        [self moveThisLine:TopMidLine thisFar:yVal];
-        
+        [self moveThisLine:_Middle thisFar:-20];
     }
     // --------------------
 }
 
-- (void) moveThisLine: (CCNodeColor*)LineMover thisFar: (int)dDist {
+- (void) moveThisLine: (CCNode*)LineMover thisFar: (int)dDist {
     
-    CCNode *whichLine;
     
     NSLog (@" %@", LineMover);
     NSLog (@"this is dDist 1 %d", dDist);
     
-    if (LineMover == BottomMidLine || LineMover == TopMidLine) {
-        
-        whichLine = _Middle;
-        
-        if (LineMover == BottomMidLine) {
-            
-            NSLog (@"The line's curent position is %f", _Middle.positionInPoints.y);
-            NSLog (@"this is dDist 2 %d", dDist);
-
+    if (LineMover == _Middle) {
             _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
-            
-            NSLog (@"The line's new position is %f", _Middle.positionInPoints.y);
-            NSLog (@"this is dDist 3 %d", dDist);
-
-        }
-        else if (LineMover == TopMidLine) {
-            _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y - dDist);
-        }
-        
-        
     }
+    
 }
 
 
