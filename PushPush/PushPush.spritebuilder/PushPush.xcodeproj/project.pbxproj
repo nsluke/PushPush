@@ -36,9 +36,10 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
-		D503C94519881A5A00401C77 /* OnePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D503C94419881A5A00401C77 /* OnePlayer.m */; };
-		D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D518ED5919707FAF00923DC1 /* ArcadeScene.m */; };
+		D53063D0199132FC001E0E12 /* AnimatedMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D53063CF199132FC001E0E12 /* AnimatedMainScene.m */; };
+		D53063D419914C0B001E0E12 /* AnimatedCharacterSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D53063D319914C0B001E0E12 /* AnimatedCharacterSelectScene.m */; };
 		D54B287B197F1ADF00D0580E /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = D54B287A197F1ADF00D0580E /* GameOver.m */; };
+		D55328AA1992862900A23E48 /* OnePlayerScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D55328A91992862900A23E48 /* OnePlayerScene.m */; };
 		D58407B91982F46200A18024 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = D58407B81982F46200A18024 /* GameState.m */; };
 		D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */; };
 		D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5ED009219785A9C00A57786 /* EndlessScene.m */; };
@@ -96,12 +97,14 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		D503C94319881A5A00401C77 /* OnePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePlayer.h; sourceTree = "<group>"; };
-		D503C94419881A5A00401C77 /* OnePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePlayer.m; sourceTree = "<group>"; };
-		D518ED5819707FAF00923DC1 /* ArcadeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcadeScene.h; sourceTree = "<group>"; };
-		D518ED5919707FAF00923DC1 /* ArcadeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcadeScene.m; sourceTree = "<group>"; };
+		D53063CE199132FC001E0E12 /* AnimatedMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedMainScene.h; path = build/AnimatedMainScene.h; sourceTree = "<group>"; };
+		D53063CF199132FC001E0E12 /* AnimatedMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatedMainScene.m; path = build/AnimatedMainScene.m; sourceTree = "<group>"; };
+		D53063D219914C0B001E0E12 /* AnimatedCharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedCharacterSelectScene.h; sourceTree = "<group>"; };
+		D53063D319914C0B001E0E12 /* AnimatedCharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedCharacterSelectScene.m; sourceTree = "<group>"; };
 		D54B2879197F1ADF00D0580E /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
 		D54B287A197F1ADF00D0580E /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOver.m; sourceTree = "<group>"; };
+		D55328A81992862900A23E48 /* OnePlayerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePlayerScene.h; sourceTree = "<group>"; };
+		D55328A91992862900A23E48 /* OnePlayerScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePlayerScene.m; sourceTree = "<group>"; };
 		D58407B71982F46200A18024 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		D58407B81982F46200A18024 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectScene.h; sourceTree = "<group>"; };
@@ -250,35 +253,37 @@
 		D503C93F1988097500401C77 /* Gameplay Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D52FC604198BE11000F534F8 /* Useless shit */,
+				D55328A81992862900A23E48 /* OnePlayerScene.h */,
+				D55328A91992862900A23E48 /* OnePlayerScene.m */,
 				D5ED009119785A9C00A57786 /* EndlessScene.h */,
 				D5ED009219785A9C00A57786 /* EndlessScene.m */,
 			);
 			name = "Gameplay Scenes";
 			sourceTree = "<group>";
 		};
-		D52FC604198BE11000F534F8 /* Useless shit */ = {
+		D52FC606198BE12400F534F8 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
-				D503C94319881A5A00401C77 /* OnePlayer.h */,
-				D503C94419881A5A00401C77 /* OnePlayer.m */,
-				D518ED5819707FAF00923DC1 /* ArcadeScene.h */,
-				D518ED5919707FAF00923DC1 /* ArcadeScene.m */,
+				D55328A61992861000A23E48 /* Unused */,
+				D53063CE199132FC001E0E12 /* AnimatedMainScene.h */,
+				D53063CF199132FC001E0E12 /* AnimatedMainScene.m */,
+				D53063D219914C0B001E0E12 /* AnimatedCharacterSelectScene.h */,
+				D53063D319914C0B001E0E12 /* AnimatedCharacterSelectScene.m */,
+				D54B2879197F1ADF00D0580E /* GameOver.h */,
+				D54B287A197F1ADF00D0580E /* GameOver.m */,
 			);
-			name = "Useless shit";
+			name = Menus;
 			sourceTree = "<group>";
 		};
-		D52FC606198BE12400F534F8 /* Menus */ = {
+		D55328A61992861000A23E48 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */,
 				D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */,
-				D54B2879197F1ADF00D0580E /* GameOver.h */,
-				D54B287A197F1ADF00D0580E /* GameOver.m */,
 			);
-			name = Menus;
+			name = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,13 +408,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
-				D503C94519881A5A00401C77 /* OnePlayer.m in Sources */,
 				D58407B91982F46200A18024 /* GameState.m in Sources */,
-				D518ED5A19707FAF00923DC1 /* ArcadeScene.m in Sources */,
+				D55328AA1992862900A23E48 /* OnePlayerScene.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				D54B287B197F1ADF00D0580E /* GameOver.m in Sources */,
+				D53063D419914C0B001E0E12 /* AnimatedCharacterSelectScene.m in Sources */,
 				D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */,
 				D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */,
+				D53063D0199132FC001E0E12 /* AnimatedMainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

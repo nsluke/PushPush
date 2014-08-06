@@ -517,7 +517,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>79</real>
+											<real>67</real>
 											<real>20</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -843,7 +843,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>79</real>
+											<real>67</real>
 											<real>85</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -881,7 +881,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string>Versus</string>
+											<string>animatedMainScene</string>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -926,7 +926,7 @@
 										<string>String</string>
 										<key>value</key>
 										<array>
-											<string>1 Player (I don't work yet)</string>
+											<string>ANIMATED MAIN SCENE</string>
 											<false/>
 										</array>
 									</dict>

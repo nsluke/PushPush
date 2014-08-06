@@ -12,20 +12,21 @@
 @implementation MainScene {
     
 }
-// [[CCDirector sharedDirector] popScene];
 - (void) didLoadFromCCB {
     //[GameState sharedInstance].colorsLoaded = false;
     //GameState *state = [[GameState alloc] init];
+    //[[CCDirector sharedDirector] popScene];
+
 }
 
-- (void) play {
+- (void) animatedMainScene {
     
-    CCLOG(@"play button pressed");
+    CCLOG(@"animatedMainScene button pressed");
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"ArcadeScene"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"AnimatedMainScene"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
-    CCLOG(@"play button stop");
+    CCLOG(@"animatedMainScene button stop");
     
 }
 

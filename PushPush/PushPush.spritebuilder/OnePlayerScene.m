@@ -1,21 +1,21 @@
 //
-//  EndlessScene.m
+//  OnePlayerScene.m
 //  PushPush
 //
-//  Created by Luke Solomon on 7/17/14.
+//  Created by Luke Solomon on 8/6/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "EndlessScene.h"
+#import "OnePlayerScene.h"
 #import "GameState.h"
 
-@implementation EndlessScene {
-
+@implementation OnePlayerScene {
+    
     //The container nodes
     CCNode *_Middle;
     CCNode *_Right;
     CCNode *_Left;
-
+    
     //color nodes
     CCNodeColor *TopLeftLine;
     CCNodeColor *TopMidLine;
@@ -27,7 +27,7 @@
     CCNodeGradient *MWD;
     CCNodeGradient *RWD;
     CCNodeGradient *LWD;
-
+    
     //particles
     //upper particles
     CCParticleSystem *PUM;
@@ -42,21 +42,21 @@
     CCParticleSystem *BLP;
     CCParticleSystem *TRP;
     CCParticleSystem *TLP;
-
+    
     //ints
     int yVal;
     int validTouchCount;
     int BtmTouchCount;
     int TopTouchCount;
     int TOUCHACCEL;
-        
+    
     //BOOL
     BOOL touchIsValid;
     
     //define the screen's height and width
-    #define SW ([[CCDirector sharedDirector] viewSize].width)
-    #define SH ([[CCDirector sharedDirector] viewSize].height)
-
+#define SW ([[CCDirector sharedDirector] viewSize].width)
+#define SH ([[CCDirector sharedDirector] viewSize].height)
+    
 }
 
 -(id) init {
@@ -80,6 +80,19 @@
     
     [self loadColors];
     
+    
+    //[[CCDirector sharedDirector] performSelector:([self update:1 delta]) withObject:(nil) afterDelay:(.5)];
+    [[CCDirector sharedDirector] performSelector:@selector(update:) withObject:nil afterDelay:0.5f];
+}
+
+- (void) update:(CCTime)delta {
+    
+
+    
+     [self moveThisLine:_Left thisFar:-(yVal)];
+     [self moveThisLine:_Right thisFar:-(yVal)];
+     [self moveThisLine:_Middle thisFar:-(yVal)];
+ 
 }
 
 - (void) loadColors {
@@ -136,7 +149,7 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     CGPoint touchLocation = [touch locationInWorld];
-
+    
     if (touchLocation.y<SH/2) {
         BtmTouchCount++;
         if (BtmTouchCount <3) {
@@ -155,24 +168,7 @@
             }
         }
     }
-    else if (touchLocation.y>SH/2) {
-        TopTouchCount++;
-        if (TopTouchCount<3) {
-            if (touchLocation.x<SW/3){
-                //top left
-                [self moveThisLine:_Left thisFar:-(yVal)];
-            }
-            else if (touchLocation.x>SW/1.5){
-                //top right
-                [self moveThisLine:_Right thisFar:-(yVal)];
-            }
-            // --------------------
-            else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
-                //top middle
-                [self moveThisLine:_Middle thisFar:-(yVal)];
-            }
-        }
-    }
+    
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -205,85 +201,85 @@
     
     if (LineMover == _Middle) {
         _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
-//        [self hitmarked: _Middle indicator: dDist];
-
+        //        [self hitmarked: _Middle indicator: dDist];
+        
         [self victoryCheck: LineMover];
     }
     if (LineMover == _Right) {
         _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
-//        [self hitmarked: _Right indicator: dDist];
+        //        [self hitmarked: _Right indicator: dDist];
         [self victoryCheck: LineMover];
     }
     if (LineMover == _Left) {
         _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
-//        [self hitmarked: _Left indicator: dDist];
+        //        [self hitmarked: _Left indicator: dDist];
         [self victoryCheck: LineMover];
     }
     
 }
 
-// -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark Hitmark
 
 /*
-//- (void) hitmarked: (CCNode*) whichLine indicator: (int) dDist {
-//
-//    NSLog(@"dDist = %d", dDist);
-//
-//    //hitMark.startColor = [GameState sharedInstance].p2Color;
-//    //hitMark.endColor = [GameState sharedInstance].p2Color;
-//    
-//    // make the particle effect clean itself up, once it is completed
-//    CCParticleSystem *hitMarkUp = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
-//    CCParticleSystem *hitMarkDown = (CCParticleSystem *)[CCBReader load:@"hitMarkUp"];
-//    
-//    hitMarkDown.startColor = [GameState sharedInstance].p2Color;
-//    hitMarkDown.endColor = [GameState sharedInstance].p2Color;
-//    hitMarkUp.startColor = [GameState sharedInstance].p1Color;
-//    hitMarkUp.endColor = [GameState sharedInstance].p1Color;
-//    
-//    if (whichLine == _Middle) {
-//        if (dDist > 0) {
-//            [MWD addChild:hitMarkUp];
-//            hitMarkUp.position = MWD.position;
-//            hitMarkUp.autoRemoveOnFinish = TRUE;
-//        }
-//        else if (dDist < 0) {
-//            [MWD addChild:hitMarkDown];
-//            hitMarkDown.position = MWD.position;
-//            hitMarkDown.autoRemoveOnFinish = TRUE;
-//        }
-//    }
-//    if (whichLine == _Right) {
-//        if (dDist > 0) {
-//            [RWD addChild:hitMarkUp];
-//            hitMarkUp.position = MWD.position;
-//            hitMarkUp.autoRemoveOnFinish = TRUE;
-//        }
-//        else if (dDist < 0) {
-//            [RWD addChild:hitMarkDown];
-//            hitMarkDown.position = MWD.position;
-//            hitMarkDown.autoRemoveOnFinish = TRUE;
-//        }
-//    }
-//    if (whichLine == _Left) {
-//        if (dDist > 0) {
-//            [LWD addChild:hitMarkUp];
-//            hitMarkDown.position = MWD.position;
-//            hitMarkUp.autoRemoveOnFinish = TRUE;
-//        }
-//        else if (dDist < 0) {
-//            [LWD addChild:hitMarkDown];
-//            hitMarkDown.position = MWD.position;
-//            hitMarkDown.autoRemoveOnFinish = TRUE;
-//        }
-//    }
-//     
-//    
-//}
-*/
+ //- (void) hitmarked: (CCNode*) whichLine indicator: (int) dDist {
+ //
+ //    NSLog(@"dDist = %d", dDist);
+ //
+ //    //hitMark.startColor = [GameState sharedInstance].p2Color;
+ //    //hitMark.endColor = [GameState sharedInstance].p2Color;
+ //
+ //    // make the particle effect clean itself up, once it is completed
+ //    CCParticleSystem *hitMarkUp = (CCParticleSystem *)[CCBReader load:@"hitMarkMiddle"];
+ //    CCParticleSystem *hitMarkDown = (CCParticleSystem *)[CCBReader load:@"hitMarkUp"];
+ //
+ //    hitMarkDown.startColor = [GameState sharedInstance].p2Color;
+ //    hitMarkDown.endColor = [GameState sharedInstance].p2Color;
+ //    hitMarkUp.startColor = [GameState sharedInstance].p1Color;
+ //    hitMarkUp.endColor = [GameState sharedInstance].p1Color;
+ //
+ //    if (whichLine == _Middle) {
+ //        if (dDist > 0) {
+ //            [MWD addChild:hitMarkUp];
+ //            hitMarkUp.position = MWD.position;
+ //            hitMarkUp.autoRemoveOnFinish = TRUE;
+ //        }
+ //        else if (dDist < 0) {
+ //            [MWD addChild:hitMarkDown];
+ //            hitMarkDown.position = MWD.position;
+ //            hitMarkDown.autoRemoveOnFinish = TRUE;
+ //        }
+ //    }
+ //    if (whichLine == _Right) {
+ //        if (dDist > 0) {
+ //            [RWD addChild:hitMarkUp];
+ //            hitMarkUp.position = MWD.position;
+ //            hitMarkUp.autoRemoveOnFinish = TRUE;
+ //        }
+ //        else if (dDist < 0) {
+ //            [RWD addChild:hitMarkDown];
+ //            hitMarkDown.position = MWD.position;
+ //            hitMarkDown.autoRemoveOnFinish = TRUE;
+ //        }
+ //    }
+ //    if (whichLine == _Left) {
+ //        if (dDist > 0) {
+ //            [LWD addChild:hitMarkUp];
+ //            hitMarkDown.position = MWD.position;
+ //            hitMarkUp.autoRemoveOnFinish = TRUE;
+ //        }
+ //        else if (dDist < 0) {
+ //            [LWD addChild:hitMarkDown];
+ //            hitMarkDown.position = MWD.position;
+ //            hitMarkDown.autoRemoveOnFinish = TRUE;
+ //        }
+ //    }
+ //
+ //
+ //}
+ */
 
-// -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 #pragma mark Pause button
 
 - (void) pause {
@@ -295,29 +291,29 @@
 
 - (void) victoryCheck: (CCNode*) windication {
     
-    //Someone has won
-    if (windication.positionInPoints.y > SH || windication.positionInPoints.y < 0)
-    {
-        //player one has won
+    if (windication.positionInPoints.y < 0) {
+        //lock on the top?
+        /*
         if (windication.positionInPoints.y > SH)
         {
             [GameState sharedInstance].wInteger = 1;
             [GameState sharedInstance].p1Score ++;
         }
+        */
         //player two has won
-        else if (windication.positionInPoints.y < 0)
-        {
-            [GameState sharedInstance].wInteger = 2;
-            [GameState sharedInstance].p2Score ++;
-        }
-        //load the gameover scene
-        CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
-        [[CCDirector sharedDirector] replaceScene:gameOver];
     }
     
+    else if (windication.positionInPoints.y < 0) {
+        [GameState sharedInstance].wInteger = 2;
+        [GameState sharedInstance].p2Score ++;
+    }
     
+    //load the gameover scene
+    CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
+    [[CCDirector sharedDirector] replaceScene:gameOver];
 }
-
+    
+    
 
 
 @end
