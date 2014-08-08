@@ -192,6 +192,7 @@
 
 // --------------------------------------------------------------------------------------------------------
 - (void) loadColors {
+    
     //color nodes
     TopLeftLine.color = [GameState sharedInstance].p2Color;
     TopMidLine.color = [GameState sharedInstance].p2Color;
@@ -234,6 +235,7 @@
     TLP.startColor = [GameState sharedInstance].p1Color;
     TRP.endColor = [GameState sharedInstance].p1Color;
     TLP.endColor = [GameState sharedInstance].p1Color;
+    
 }
 
 // --------------------------------------------------------------------------------------------------------
@@ -255,6 +257,7 @@
         
         NSLog(@"toggle is now %d", toggle);
     }
+    
     [self rotater: black];
     [self rotater: white];
     [self rotater: violet];
@@ -264,6 +267,7 @@
     [self rotater: orange];
     [self rotater: yellow];
     [self rotater: red];
+    
 }
 
 -(void) rotater: (CCButton*) whichButton {
@@ -283,6 +287,14 @@
 - (void) Ready {
     CCScene *endlessScene = [CCBReader loadAsScene:@"EndlessScene"];
     [[CCDirector sharedDirector] replaceScene:endlessScene];
+    //[[CCDirector sharedDirector] replaceScene:[ZoomTransition CCTransitionWithDuration:1.0 scene:endlessScene]];
+
+}
+
+- (void) onePReady {
+    CCScene *onePlayerScene = [CCBReader loadAsScene:@"OnePlayerScene"];
+    [[CCDirector sharedDirector] replaceScene:onePlayerScene];
+    //[[CCDirector sharedDirector] replaceScene:endlessScene withTransition:( *)];
 }
 
 @end

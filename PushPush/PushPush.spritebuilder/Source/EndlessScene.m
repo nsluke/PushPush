@@ -299,14 +299,12 @@
     if (windication.positionInPoints.y > SH || windication.positionInPoints.y < 0)
     {
         //player one has won
-        if (windication.positionInPoints.y > SH)
-        {
+        if (windication.positionInPoints.y > SH) {
             [GameState sharedInstance].wInteger = 1;
             [GameState sharedInstance].p1Score ++;
         }
         //player two has won
-        else if (windication.positionInPoints.y < 0)
-        {
+        else if (windication.positionInPoints.y < 0) {
             [GameState sharedInstance].wInteger = 2;
             [GameState sharedInstance].p2Score ++;
         }

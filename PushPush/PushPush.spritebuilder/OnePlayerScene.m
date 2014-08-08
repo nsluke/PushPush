@@ -11,6 +11,9 @@
 
 @implementation OnePlayerScene {
     
+    //score label
+    CCLabelTTF *ScoreLabel;
+    
     //The container nodes
     CCNode *_Middle;
     CCNode *_Right;
@@ -67,12 +70,13 @@
 }
 
 - (void) didLoadFromCCB {
+    
     yVal = 20;
     
-    TOUCHACCEL = 1000;
+    //TOUCHACCEL = 1000;
     
     BtmTouchCount = 0;
-    TopTouchCount = 0;
+    //TopTouchCount = 0;
     
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
@@ -82,18 +86,15 @@
     
     
     //[[CCDirector sharedDirector] performSelector:([self update:1 delta]) withObject:(nil) afterDelay:(.5)];
-    [[CCDirector sharedDirector] performSelector:@selector(update:) withObject:nil afterDelay:0.5f];
+    //[[CCDirector sharedDirector] performSelector:@selector(fixedUpdate:) withObject:nil afterDelay:.9f];
+
+    [self moveThisLine:_Right thisFar:-(yVal)];
+    
+    NSLog(@"SOMETHING HAPPENED!!!!! %f", _Right.position.y);
+
 }
 
-- (void) update:(CCTime)delta {
-    
 
-    
-     [self moveThisLine:_Left thisFar:-(yVal)];
-     [self moveThisLine:_Right thisFar:-(yVal)];
-     [self moveThisLine:_Middle thisFar:-(yVal)];
- 
-}
 
 - (void) loadColors {
     // ---------------------------------------------------------------------------------------------
@@ -114,7 +115,7 @@
     MWD.endColor = [GameState sharedInstance].p2Color;
     RWD.endColor = [GameState sharedInstance].p2Color;
     LWD.endColor = [GameState sharedInstance].p2Color;
-    
+
     //particles
     //upper particles
     PUM.startColor = [GameState sharedInstance].p1Color;
@@ -150,26 +151,37 @@
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     CGPoint touchLocation = [touch locationInWorld];
     
-    if (touchLocation.y<SH/2) {
+    
+    // if touch occured in lower half of the screen
+    if (touchLocation.y < SH/2) {
         BtmTouchCount++;
+        
+        //ensure that there are no more than 2 touches on the screen at a time
         if (BtmTouchCount <3) {
             
-            if (touchLocation.x<SW/3){
-                //bottom left
+            //bottom left
+            if (touchLocation.x<SW/3) {
+                
                 [self moveThisLine:_Left thisFar:yVal];
             }
-            else if (touchLocation.x>SW/1.5){
-                //bottom right
+            
+            //bottom right
+            else if (touchLocation.x>SW/1.5) {
+                
                 [self moveThisLine:_Right thisFar:yVal];
             }
-            else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
-                //bottom middle
+            
+            //bottom middle
+            else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5) {
+                
                 [self moveThisLine:_Middle thisFar:yVal];
             }
         }
     }
-    
 }
+
+
+
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
@@ -197,25 +209,40 @@
     }
 }
 
+// -------------------------------------------------------------------------------
+#pragma mark line moving
+
 - (void) moveThisLine: (CCNode*)LineMover thisFar: (int)dDist {
     
     if (LineMover == _Middle) {
+        
         _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
-        //        [self hitmarked: _Middle indicator: dDist];
         
         [self victoryCheck: LineMover];
-    }
-    if (LineMover == _Right) {
-        _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
-        //        [self hitmarked: _Right indicator: dDist];
-        [self victoryCheck: LineMover];
-    }
-    if (LineMover == _Left) {
-        _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
-        //        [self hitmarked: _Left indicator: dDist];
-        [self victoryCheck: LineMover];
+        
+        // [self hitmarked: _Middle indicator: dDist];
+
     }
     
+    if (LineMover == _Right) {
+        
+        _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
+        
+        [self victoryCheck: LineMover];
+        
+        //[self hitmarked: _Right indicator: dDist];
+
+    }
+    
+    if (LineMover == _Left) {
+        
+        _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
+        
+        [self victoryCheck: LineMover];
+
+        //[self hitmarked: _Left indicator: dDist];
+
+    }
 }
 
 // -------------------------------------------------------------------------------
@@ -291,28 +318,39 @@
 
 - (void) victoryCheck: (CCNode*) windication {
     
+    /*
     if (windication.positionInPoints.y < 0) {
         //lock on the top?
-        /*
+     
         if (windication.positionInPoints.y > SH)
         {
             [GameState sharedInstance].wInteger = 1;
             [GameState sharedInstance].p1Score ++;
         }
-        */
+     
         //player two has won
     }
+    */
+
+    NSLog(@"SOMETHING HAPPENED!!!!!    %d", windication.positionInPoints.y < 0);
     
-    else if (windication.positionInPoints.y < 0) {
-        [GameState sharedInstance].wInteger = 2;
-        [GameState sharedInstance].p2Score ++;
+    
+    if (windication.positionInPoints.y < 0) {
+        
+        
+        
+        //[GameState sharedInstance].wInteger = 2;
+        //[GameState sharedInstance].p2Score ++;
     }
     
+    
+    /*
     //load the gameover scene
     CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
     [[CCDirector sharedDirector] replaceScene:gameOver];
+     */
 }
-    
+
     
 
 
