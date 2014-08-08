@@ -14,6 +14,9 @@
     //score label
     CCLabelTTF *ScoreLabel;
     
+    //timer
+    CCTimer *_timer;
+    
     //The container nodes
     CCNode *_Middle;
     CCNode *_Right;
@@ -64,8 +67,11 @@
 
 -(id) init {
     self = [super init];
+    
     if (self) {
+        _timer = [[CCTimer alloc] init];
     }
+    
     return self;
 }
 
@@ -92,14 +98,44 @@
     
     NSLog(@"SOMETHING HAPPENED!!!!! %f", _Right.position.y);
 
+    [self schedule:@selector(step) interval:(1.f)];
+    
 }
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds invocation:(NSInvocation *)invocation repeats:(BOOL)repeats; {
+-(void) step {
     
+    /*
+    int cSwitcher = 0;
     
+    switch (cSwitcher) {
+            
+        case 0:
+            [self moveThisLine:_Left thisFar:-(yVal)];
+            [self moveThisLine:_Right thisFar:-(yVal)];
+            
+            break;
+            
+        case 1:
+            [self moveThisLine:_Right thisFar:-(yVal)];
+            [self moveThisLine:_Middle thisFar:-(yVal)];
+            
+            break;
+        case 2:
+            [self moveThisLine:_Left thisFar:-(yVal)];
+            [self moveThisLine:_Middle thisFar:-(yVal)];
+            
+        default:
+            break;
+    }
+    */
+    
+    [self moveThisLine:_Left thisFar:-(yVal)];
+
+    [self moveThisLine:_Right thisFar:-(yVal)];
+
+    [self moveThisLine:_Middle thisFar:-(yVal)];
 
 }
-
 
 - (void) loadColors {
     // ---------------------------------------------------------------------------------------------

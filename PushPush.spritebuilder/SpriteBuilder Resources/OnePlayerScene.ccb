@@ -1590,7 +1590,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>1</real>
+											<real>0.80000001192092896</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -1877,7 +1877,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>0.0</real>
+											<real>0.20000000298023224</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -2715,7 +2715,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>0.0</real>
+											<real>0.20000000298023224</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -3002,7 +3002,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>1</real>
+											<real>0.20000000298023224</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -3840,7 +3840,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>0.0</real>
+											<real>0.20000000298023224</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -4127,7 +4127,7 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>1</real>
+											<real>0.80000001192092896</real>
 											<integer>0</integer>
 											<integer>2</integer>
 											<integer>2</integer>
@@ -4380,6 +4380,8 @@
 										<string>ccbResources/ccbTextField.png</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -4911,8 +4913,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

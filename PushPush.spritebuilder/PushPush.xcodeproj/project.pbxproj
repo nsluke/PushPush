@@ -97,8 +97,8 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
-		D53063CE199132FC001E0E12 /* AnimatedMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedMainScene.h; path = build/AnimatedMainScene.h; sourceTree = "<group>"; };
-		D53063CF199132FC001E0E12 /* AnimatedMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatedMainScene.m; path = build/AnimatedMainScene.m; sourceTree = "<group>"; };
+		D53063CE199132FC001E0E12 /* AnimatedMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedMainScene.h; sourceTree = "<group>"; };
+		D53063CF199132FC001E0E12 /* AnimatedMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedMainScene.m; sourceTree = "<group>"; };
 		D53063D219914C0B001E0E12 /* AnimatedCharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedCharacterSelectScene.h; sourceTree = "<group>"; };
 		D53063D319914C0B001E0E12 /* AnimatedCharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedCharacterSelectScene.m; sourceTree = "<group>"; };
 		D54B2879197F1ADF00D0580E /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
