@@ -11,7 +11,7 @@
 @interface OnePlayerScene : CCScene
 
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds invocation:(NSInvocation *)invocation repeats:(BOOL)repeats;
+
 
 
 @end

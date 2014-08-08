@@ -94,6 +94,11 @@
 
 }
 
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds invocation:(NSInvocation *)invocation repeats:(BOOL)repeats; {
+    
+    
+
+}
 
 
 - (void) loadColors {
