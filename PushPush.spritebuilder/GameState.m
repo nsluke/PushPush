@@ -8,7 +8,12 @@
 
 #import "GameState.h"
 
-@implementation GameState
+@implementation GameState {
+    
+
+
+}
+
 
 
 + (instancetype)sharedInstance {
@@ -19,16 +24,10 @@
     __strong static id _sharedObject = nil;
     
     // executes a block object once and only once for the lifetime of an application
-    dispatch_once(&p, ^{ _sharedObject = [[self alloc]init]; });
+    dispatch_once(&p, ^ { _sharedObject = [[self alloc]init]; });
     
     // returns the same object each time
     return _sharedObject;
-}
-
-- (void) setP2Color:(CCColor *)p2Color {
-    
-    _p2Color = p2Color;
-
 }
 
 - (instancetype)init {
@@ -39,6 +38,7 @@
     }
     
     return self;
+    //initialize the colors
 }
 
 @end

@@ -39,10 +39,6 @@
     p2Label.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].p2Score];
     
     //load the particle system colors
-    
-    
-
-    
     if ([GameState sharedInstance].wInteger == 1) {
         
         p1Label2.string = @"YOU WON!";
@@ -58,13 +54,15 @@
         p2Particle.startColor = [GameState sharedInstance].p2Color;
         p2Particle.endColor = [GameState sharedInstance].p2Color;
     }
-
 }
 
 
 - (void) endless {
-    CCScene *endlessScene = [CCBReader loadAsScene:@"EndlessScene"];
-    [[CCDirector sharedDirector] replaceScene:endlessScene];
+    [GameState sharedInstance].gameMode = 2;
+    
+    CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
+    
+    [[CCDirector sharedDirector] replaceScene:o];
 }
 
 

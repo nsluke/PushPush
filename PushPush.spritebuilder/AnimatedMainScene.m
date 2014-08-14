@@ -7,45 +7,69 @@
 //
 
 #import "AnimatedMainScene.h"
+#import "GameState.h"
+#import "AnimatedCharacterSelectScene.h"
 
 @implementation AnimatedMainScene {
     
 }
 
 - (void) didLoadFromCCB {
+    if ([GameState sharedInstance].p1Color == NULL) {
+        [GameState sharedInstance].p1Color = [CCColor colorWithRed:255.0f/255.0f
+                                                             green:255.0f/255.0f
+                                                              blue:255.0f/255.0f
+                                                             alpha:1.0f];;
+    }
     
-    //[GameState sharedInstance].colorsLoaded = false;
-    //GameState *state = [[GameState alloc] init];
-    //[[CCDirector sharedDirector] popScene];
+    if ([GameState sharedInstance].p2Color == NULL) {
+        [GameState sharedInstance].p2Color = [CCColor colorWithRed:127.0f/255.0f
+                                                             green:000.0f/255.0f
+                                                              blue:127.0f/255.0f
+                                                             alpha:1.0f];
+    }
+}
+
+- (void) onePlayer {
+    
+    [GameState sharedInstance].gameMode = 1;
+    
+    CCScene *animatedCharSelectScene = [CCBReader
+                                    loadAsScene:@"AnimatedCharacterSelectScene"];
+    
+    [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
+}
+
+
+- (void) twoPlayer {
+    
+    [GameState sharedInstance].gameMode = 2;
+    
+    CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
+    
+    [[CCDirector sharedDirector] replaceScene:o];
+}
+
+- (void) TutorialPush {
+    
+    //[GameState sharedInstance].gameMode = 2;
+    
+    CCScene *TwoPlayerTutorialScene = [CCBReader loadAsScene:@"TutorialPartTwo"];
+    
+    [[CCDirector sharedDirector] replaceScene:TwoPlayerTutorialScene];
     
 }
 
-- (void) play {
+- (void) changeColors {
     
-    CCLOG(@"play button pressed");
-    
-    /*
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"OnePlayerScene"];
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
-    */
+    [GameState sharedInstance].gameMode = 2;
     
     CCScene *animatedCharSelectScene = [CCBReader loadAsScene:@"AnimatedCharacterSelectScene"];
+    
     [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
     
-    CCLOG(@"play button stop");
-    
+
 }
 
-
-- (void) Versus {
-    
-    CCLOG(@"versus button pressed");
-    
-    CCScene *animatedCharSelectScene = [CCBReader loadAsScene:@"AnimatedCharacterSelectScene"];
-    [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
-    
-    CCLOG(@"versus button stop");
-    
-}
 
 @end

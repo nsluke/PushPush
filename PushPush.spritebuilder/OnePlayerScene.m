@@ -58,6 +58,7 @@
     
     //BOOL
     BOOL touchIsValid;
+    BOOL lineIsLocked;
     
     //define the screen's height and width
 #define SW ([[CCDirector sharedDirector] viewSize].width)
@@ -94,10 +95,7 @@
     //[[CCDirector sharedDirector] performSelector:([self update:1 delta]) withObject:(nil) afterDelay:(.5)];
     //[[CCDirector sharedDirector] performSelector:@selector(fixedUpdate:) withObject:nil afterDelay:.9f];
 
-    [self moveThisLine:_Right thisFar:-(yVal)];
     
-    NSLog(@"SOMETHING HAPPENED!!!!! %f", _Right.position.y);
-
     [self schedule:@selector(step) interval:(1.f)];
     
 }
@@ -129,12 +127,13 @@
     }
     */
     
+    ScoreLabel.string = [NSString stringWithFormat: @"%@", _timer];
+    
     [self moveThisLine:_Left thisFar:-(yVal)];
 
     [self moveThisLine:_Right thisFar:-(yVal)];
 
     [self moveThisLine:_Middle thisFar:-(yVal)];
-
 }
 
 - (void) loadColors {
@@ -195,8 +194,9 @@
     
     // if touch occured in lower half of the screen
     if (touchLocation.y < SH/2) {
-        BtmTouchCount++;
         
+        BtmTouchCount++;
+            
         //ensure that there are no more than 2 touches on the screen at a time
         if (BtmTouchCount <3) {
             
@@ -219,6 +219,8 @@
             }
         }
     }
+    
+    
 }
 
 
@@ -255,35 +257,43 @@
 
 - (void) moveThisLine: (CCNode*)LineMover thisFar: (int)dDist {
     
-    if (LineMover == _Middle) {
-        
-        _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
-        
-        [self victoryCheck: LineMover];
-        
-        // [self hitmarked: _Middle indicator: dDist];
-
-    }
     
-    if (LineMover == _Right) {
         
-        _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
+        if (LineMover == _Middle) {
+            
+            
+            //CCActionWithDuration
+            [_Middle stopAllActions];
+            [_Middle runAction:[CCActionMoveTo actionWithDuration:.1 position:ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist)]];
+            
+//            _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
+            
+            [self victoryCheck: LineMover];
+            
+            // [self hitmarked: _Middle indicator: dDist];
+            
+        }
         
-        [self victoryCheck: LineMover];
+        if (LineMover == _Right) {
+            
+            _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
+            
+            [self victoryCheck: LineMover];
+            
+            //[self hitmarked: _Right indicator: dDist];
+            
+        }
         
-        //[self hitmarked: _Right indicator: dDist];
-
-    }
+        if (LineMover == _Left) {
+            
+            _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
+            
+            [self victoryCheck: LineMover];
+            
+            //[self hitmarked: _Left indicator: dDist];
+            
+        }
     
-    if (LineMover == _Left) {
-        
-        _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
-        
-        [self victoryCheck: LineMover];
-
-        //[self hitmarked: _Left indicator: dDist];
-
-    }
 }
 
 // -------------------------------------------------------------------------------
@@ -359,37 +369,23 @@
 
 - (void) victoryCheck: (CCNode*) windication {
     
-    /*
-    if (windication.positionInPoints.y < 0) {
-        //lock on the top?
-     
-        if (windication.positionInPoints.y > SH)
-        {
-            [GameState sharedInstance].wInteger = 1;
-            [GameState sharedInstance].p1Score ++;
-        }
-     
-        //player two has won
+    
+    if (windication.positionInPoints.y > SH) {
+
+        //lineIsLocked = TRUE;
+        
     }
-    */
+    
 
     NSLog(@"SOMETHING HAPPENED!!!!!    %d", windication.positionInPoints.y < 0);
     
     
     if (windication.positionInPoints.y < 0) {
-        
-        
-        
-        //[GameState sharedInstance].wInteger = 2;
-        //[GameState sharedInstance].p2Score ++;
+        [GameState sharedInstance].wInteger = 2;
+        [GameState sharedInstance].p2Score ++;
+        CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
+        [[CCDirector sharedDirector] replaceScene:gameOver];
     }
-    
-    
-    /*
-    //load the gameover scene
-    CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
-    [[CCDirector sharedDirector] replaceScene:gameOver];
-     */
 }
 
     

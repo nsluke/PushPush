@@ -11,6 +11,9 @@
 
 @implementation EndlessScene {
 
+    CCNode *o;
+    
+    
     //The container nodes
     CCNode *_Middle;
     CCNode *_Right;
@@ -51,7 +54,11 @@
     int TOUCHACCEL;
         
     //BOOL
-    BOOL touchIsValid;
+    BOOL PAUSED;
+    
+    //Button
+    CCButton *PauseButton;
+    CCButton *ResumeButton;
     
     //define the screen's height and width
     #define SW ([[CCDirector sharedDirector] viewSize].width)
@@ -80,6 +87,11 @@
     
     [self loadColors];
     
+    // access audio object
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio preloadEffect:@"Blip_Select46.mp3"];
+    
+    ResumeButton.visible = FALSE;
 }
 
 - (void) loadColors {
@@ -137,42 +149,50 @@
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     CGPoint touchLocation = [touch locationInWorld];
 
-    if (touchLocation.y<SH/2) {
-        BtmTouchCount++;
-        if (BtmTouchCount <3) {
-            
-            if (touchLocation.x<SW/3){
-                //bottom left
-                [self moveThisLine:_Left thisFar:yVal];
+    if (PAUSED == FALSE) {
+        
+        // access audio object
+        OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+        // play sound effect
+        [audio playEffect:@"Blip_Select46.mp3"];
+        
+        if (touchLocation.y<SH/2) {
+            BtmTouchCount++;
+            if (BtmTouchCount <3) {
+                
+                if (touchLocation.x<SW/3){
+                    //bottom left
+                    [self moveThisLine:_Left thisFar:yVal];
+                }
+                else if (touchLocation.x>SW/1.5){
+                    //bottom right
+                    [self moveThisLine:_Right thisFar:yVal];
+                }
+                else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
+                    //bottom middle
+                    [self moveThisLine:_Middle thisFar:yVal];
+                }
             }
-            else if (touchLocation.x>SW/1.5){
-                //bottom right
-                [self moveThisLine:_Right thisFar:yVal];
+        }//if
+        else if (touchLocation.y>SH/2) {
+            TopTouchCount++;
+            if (TopTouchCount<3) {
+                if (touchLocation.x<SW/3){
+                    //top left
+                    [self moveThisLine:_Left thisFar:-(yVal)];
+                }
+                else if (touchLocation.x>SW/1.5){
+                    //top right
+                    [self moveThisLine:_Right thisFar:-(yVal)];
+                }
+                // --------------------
+                else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
+                    //top middle
+                    [self moveThisLine:_Middle thisFar:-(yVal)];
+                }
             }
-            else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
-                //bottom middle
-                [self moveThisLine:_Middle thisFar:yVal];
-            }
-        }
-    }
-    else if (touchLocation.y>SH/2) {
-        TopTouchCount++;
-        if (TopTouchCount<3) {
-            if (touchLocation.x<SW/3){
-                //top left
-                [self moveThisLine:_Left thisFar:-(yVal)];
-            }
-            else if (touchLocation.x>SW/1.5){
-                //top right
-                [self moveThisLine:_Right thisFar:-(yVal)];
-            }
-            // --------------------
-            else if (touchLocation.x>SW/3 && touchLocation.x<SW/1.5){
-                //top middle
-                [self moveThisLine:_Middle thisFar:-(yVal)];
-            }
-        }
-    }
+        }//else
+    }//paused
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -222,7 +242,7 @@
     
 }
 
-// -------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 #pragma mark Hitmark
 
 /*
@@ -280,16 +300,30 @@
 //    }
 //     
 //    
-//}
+//
 */
 
-// -------------------------------------------------------------------------------------------------
-#pragma mark Pause button
+// --------------------------------------------------------------------------------------
+#pragma mark buttons
 
 - (void) pause {
     
-    CCScene *mainScene = [CCBReader loadAsScene:@"AnimatedMainScene"];
-    [[CCDirector sharedDirector] replaceScene:mainScene];
+    PAUSED = TRUE;
+    
+    [[CCDirector sharedDirector] pause];
+    ResumeButton.visible = TRUE;
+    PauseButton.visible = FALSE;
+
+    
+}
+
+- (void) resume {
+    
+    PAUSED = FALSE;
+    
+    [[CCDirector sharedDirector] resume];
+    ResumeButton.visible = FALSE;
+    PauseButton.visible = TRUE;
     
 }
 

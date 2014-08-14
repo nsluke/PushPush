@@ -11,27 +11,32 @@
 
 @interface GameState : NSObject
 
-@property (nonatomic, assign) NSInteger p1Score;
-@property (nonatomic, assign) NSInteger p2Score;
-@property (nonatomic, assign) NSInteger wInteger;
+@property (nonatomic) NSInteger p1Score;
+@property (nonatomic) NSInteger p2Score;
+@property (nonatomic) NSInteger wInteger;
 
-@property (nonatomic, assign) bool colorsLoaded;
+@property (nonatomic) bool colorsLoaded;
 
-
-@property (nonatomic, assign) NSInteger gameMode;
+@property (nonatomic) NSInteger gameMode;
 /*
  So this is going to store what game mode we're in. Currently:
  0 No game mode currently.
- 1 Arcade
- 2 Endless
- 3
+ 1: 1 Player
+ 2: 2 Player
  */
 
-//Not really being used yet
 @property (nonatomic, strong) CCColor *p1Color;
 @property (nonatomic, strong) CCColor *p2Color;
 
-
+@property (nonatomic, strong) CCColor *black1;
+@property (nonatomic, strong) CCColor *violet1;
+@property (nonatomic, strong) CCColor *indigo1;
+@property (nonatomic, strong) CCColor *blue1;
+@property (nonatomic, strong) CCColor *green1;
+@property (nonatomic, strong) CCColor *yellow1;
+@property (nonatomic, strong) CCColor *orange1;
+@property (nonatomic, strong) CCColor *red1;
+@property (nonatomic, strong) CCColor *white1;
 
 + (instancetype)sharedInstance;
 
