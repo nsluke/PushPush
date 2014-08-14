@@ -17,14 +17,14 @@
     int BtmTouchCount;
     int yVal;
 
-    
     #define SW ([[CCDirector sharedDirector] viewSize].width)
     #define SH ([[CCDirector sharedDirector] viewSize].height)
 }
 
 -(void) didLoadFromCCB {
     
-     self.userInteractionEnabled = TRUE;
+    [MGWU logEvent:@"tutorialOpened" withParams:nil];
+    self.userInteractionEnabled = TRUE;
     
 }
 

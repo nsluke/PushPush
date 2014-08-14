@@ -31,44 +31,29 @@
 }
 
 - (void) onePlayer {
-    
     [GameState sharedInstance].gameMode = 1;
-    
-    CCScene *animatedCharSelectScene = [CCBReader
-                                    loadAsScene:@"AnimatedCharacterSelectScene"];
-    
+    CCScene *animatedCharSelectScene = [CCBReader loadAsScene:@"AnimatedCharacterSelectScene"];
     [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
 }
 
 
 - (void) twoPlayer {
-    
     [GameState sharedInstance].gameMode = 2;
-    
     CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
-    
     [[CCDirector sharedDirector] replaceScene:o];
 }
 
 - (void) TutorialPush {
-    
     //[GameState sharedInstance].gameMode = 2;
-    
     CCScene *TwoPlayerTutorialScene = [CCBReader loadAsScene:@"TutorialPartTwo"];
-    
     [[CCDirector sharedDirector] replaceScene:TwoPlayerTutorialScene];
     
 }
 
 - (void) changeColors {
-    
     [GameState sharedInstance].gameMode = 2;
-    
     CCScene *animatedCharSelectScene = [CCBReader loadAsScene:@"AnimatedCharacterSelectScene"];
-    
     [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
-    
-
 }
 
 

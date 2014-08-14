@@ -31,6 +31,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MGWU loadMGWU:@"einootaasheifi1"];
+    
     //Trying to do multi touch stuff....totally lost
     /*
     CCGLView *__glView = [CCGLView viewWithFrame: [window_ bounds];

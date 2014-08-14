@@ -54,14 +54,23 @@
         p2Particle.startColor = [GameState sharedInstance].p2Color;
         p2Particle.endColor = [GameState sharedInstance].p2Color;
     }
+    
+    /*
+    NSNumber* player1score = [NSNumber numberWithInt:[GameState sharedInstance].p1Score];
+    NSNumber* player2score = [NSNumber numberWithInt:[GameState sharedInstance].p2Score];
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: player1score, @"P1score", player2score, @"P2score"];
+    */
+    
+    [MGWU logEvent:@"level_complete" /*withParams:params*/];
 }
 
 
 - (void) endless {
+    [MGWU logEvent:@"played again"];
+    
     [GameState sharedInstance].gameMode = 2;
     
     CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
-    
     [[CCDirector sharedDirector] replaceScene:o];
 }
 
