@@ -2510,7 +2510,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.24000000953674316</real>
+									<real>0.20000000298023224</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -3855,7 +3855,7 @@
 								<key>value</key>
 								<array>
 									<real>0.15999999642372131</real>
-									<real>0.48999997973442078</real>
+									<real>0.44999998807907104</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -5177,7 +5177,7 @@
 								<key>value</key>
 								<array>
 									<real>0.8399999737739563</real>
-									<real>0.58666670322418213</real>
+									<real>0.60000002384185791</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -5487,7 +5487,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0133333345875144</real>
+							<real>0.0</real>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -5862,7 +5862,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0066666672937572002</real>
+							<real>0.0</real>
 							<integer>3</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7099,8 +7099,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -7562,7 +7560,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.20000000298023224</real>
+							<real>0.12999999523162842</real>
 							<integer>2</integer>
 							<integer>2</integer>
 						</array>
@@ -7575,7 +7573,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.20000000298023224</real>
+							<real>0.12999999523162842</real>
 							<integer>2</integer>
 							<integer>2</integer>
 						</array>
@@ -7826,6 +7824,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -8319,7 +8319,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.066666670143604279</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

@@ -98,6 +98,7 @@
     toggle = 1;
     
     //select buttons
+    /*
     if ([GameState sharedInstance].gameMode == 1) {
         
         OnePButton.visible = TRUE;
@@ -111,6 +112,9 @@
         TwoPButton.visible = TRUE;
         
     }
+    */
+    
+    TwoPButton.visible = TRUE;
     
     //initialize the colors
     black1  = [CCColor colorWithRed:000.0f/255.0f

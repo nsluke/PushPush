@@ -12,6 +12,9 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Icon-76</string>
+		<string>Icon-60</string>
+		<string>Icon-40</string>
 		<string>Settings</string>
 		<string>iPhone</string>
 		<string>iPhone-old</string>
@@ -24,6 +27,10 @@
 	</array>
 	<key>CFBundleIconFiles~ipad</key>
 	<array>
+		<string>iTunesArtwork</string>
+		<string>Icon-76</string>
+		<string>Icon-Small</string>
+		<string>Icon-60</string>
 		<string>Settings</string>
 		<string>iPad</string>
 		<string>iPad-old</string>

@@ -31,12 +31,19 @@
 
 - (void) didLoadFromCCB {
     
+
+    
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     
     //load the scores from the singleton
     p1Label.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].p1Score];
     p2Label.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].p2Score];
+    
+    // access audio object
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // play sound effect
+    [audio playEffect:@"Randomize6.mp3"];
     
     //load the particle system colors
     if ([GameState sharedInstance].wInteger == 1) {
