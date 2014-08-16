@@ -30,7 +30,7 @@
 
 - (void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     
-    CCScene *EndlessScene = [CCBReader loadAsScene:@"EndlessScene"];
+    CCScene *EndlessScene = [CCBReader loadAsScene:@"OnePlayerScene"];
     [[CCDirector sharedDirector] replaceScene:EndlessScene];
     
 }

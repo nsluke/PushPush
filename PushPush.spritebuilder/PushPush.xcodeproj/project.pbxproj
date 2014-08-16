@@ -135,6 +135,7 @@
 		D58DB1C3199DA28A004219DC /* Randomize12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C1199DA28A004219DC /* Randomize12.mp3 */; };
 		D5A1F8AD19990CD60024DBAA /* TwoPlayerTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A1F8AC19990CD60024DBAA /* TwoPlayerTutorial.m */; };
 		D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */; };
+		D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */; };
 		D5D2F454199AD9FA006E063B /* CountDownTimer2.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D2F453199AD9FA006E063B /* CountDownTimer2.m */; };
 		D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5ED009219785A9C00A57786 /* EndlessScene.m */; };
 /* End PBXBuildFile section */
@@ -300,6 +301,7 @@
 		D5A1F8AC19990CD60024DBAA /* TwoPlayerTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoPlayerTutorial.m; sourceTree = "<group>"; };
 		D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectScene.h; sourceTree = "<group>"; };
 		D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSelectScene.m; sourceTree = "<group>"; };
+		D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PushPush/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		D5D2F452199AD9FA006E063B /* CountDownTimer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimer2.h; sourceTree = "<group>"; };
 		D5D2F453199AD9FA006E063B /* CountDownTimer2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownTimer2.m; sourceTree = "<group>"; };
 		D5ED009119785A9C00A57786 /* EndlessScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndlessScene.h; path = Source/EndlessScene.h; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */,
 				D58DB1A4199D4D62004219DC /* New Icons */,
 				D54D79A7199C582B005521E0 /* Audio */,
 				B73789911807667A0076A88C /* Icons */,
@@ -650,7 +653,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = SBVP8ED765;
+						DevelopmentTeam = 6TK8Q4KD6G;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -778,6 +781,7 @@
 				D54D7A32199D09F3005521E0 /* MGWUBackgroundDark-Portrait~ipad.png in Resources */,
 				D54D7A2F199D09F3005521E0 /* MGWUBackgroundDark-Landscape~iphone.png in Resources */,
 				D54D7A22199D09F3005521E0 /* MGWUAboutFooter-Portrait~ipad.png in Resources */,
+				D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */,
 				D54D7A30199D09F3005521E0 /* MGWUBackgroundDark-Portrait@2x~ipad.png in Resources */,
 				D54D7A17199D09F3005521E0 /* mgwu-gk-notification.png in Resources */,
 				D54D7A29199D09F3005521E0 /* MGWUBackground-Portrait@2x~iphone.png in Resources */,
@@ -912,8 +916,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -941,7 +947,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
+				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -951,8 +957,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -978,7 +986,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
+				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

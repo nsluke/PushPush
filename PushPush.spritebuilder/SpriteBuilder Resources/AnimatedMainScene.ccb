@@ -1369,7 +1369,7 @@
 										<key>displayName</key>
 										<string>TopMid</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>TopMidLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -1604,7 +1604,7 @@
 										<key>displayName</key>
 										<string>BottomMid</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>BottomMidLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -1695,8 +1695,6 @@
 												<real>1</real>
 											</dict>
 										</array>
-										<key>seqExpanded</key>
-										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>
@@ -2721,7 +2719,7 @@
 										<key>displayName</key>
 										<string>BottomLeft</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>BottomLeftLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -2956,7 +2954,7 @@
 										<key>displayName</key>
 										<string>TopLeft</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>TopLeftLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -4048,7 +4046,7 @@
 										<key>displayName</key>
 										<string>TopRight</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>TopRightLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -4283,7 +4281,7 @@
 										<key>displayName</key>
 										<string>BottomRight</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>BottomRightLine</string>
 										<key>memberVarAssignmentType</key>
 										<integer>1</integer>
 										<key>properties</key>
@@ -5461,7 +5459,7 @@
 				<key>displayName</key>
 				<string>TopPushLabel</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>TopPushLabel</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -5836,7 +5834,7 @@
 				<key>displayName</key>
 				<string>BottomPushLabel</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>BottomPushLabel</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -5974,9 +5972,9 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.0</real>
-							<real>0.5</real>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -6066,6 +6064,14 @@
 				<integer>1</integer>
 				<key>properties</key>
 				<array>
+					<dict>
+						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
 					<dict>
 						<key>name</key>
 						<string>name</string>
@@ -6786,7 +6792,7 @@
 						<key>value</key>
 						<array>
 							<real>0.49963074922561646</real>
-							<real>0.43861672282218933</real>
+							<real>0.40000000596046448</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7124,14 +7130,6 @@
 				<array>
 					<dict>
 						<key>name</key>
-						<string>visible</string>
-						<key>type</key>
-						<string>Check</string>
-						<key>value</key>
-						<false/>
-					</dict>
-					<dict>
-						<key>name</key>
 						<string>name</string>
 						<key>type</key>
 						<string>StringSimple</string>
@@ -7145,8 +7143,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.50689816474914551</real>
-							<real>0.34987223148345947</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7194,7 +7192,7 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>0.5</real>
 							<real>0.10000000149011612</real>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7207,7 +7205,7 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
+							<real>0.5</real>
 							<real>0.10000000149011612</real>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7228,7 +7226,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1  Player  (COMING  SOON!)</string>
+							<string>1 Player</string>
 							<false/>
 						</array>
 					</dict>
@@ -7429,7 +7427,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>2</real>
+							<real>3</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -7510,8 +7508,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.51379638910293579</real>
-							<real>0.54857873916625977</real>
+							<real>0.5</real>
+							<real>0.60000002384185791</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -7593,7 +7591,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>START</string>
+							<string>2 PLAYER</string>
 							<false/>
 						</array>
 					</dict>
@@ -7824,8 +7822,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -7844,7 +7840,7 @@
 				<key>displayName</key>
 				<string>Tutorial</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>moreGames</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
