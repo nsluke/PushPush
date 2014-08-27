@@ -10,10 +10,7 @@
 
 @implementation GameState {
     
-
-
 }
-
 
 
 + (instancetype)sharedInstance {
@@ -28,6 +25,7 @@
     
     // returns the same object each time
     return _sharedObject;
+    
 }
 
 - (instancetype)init {

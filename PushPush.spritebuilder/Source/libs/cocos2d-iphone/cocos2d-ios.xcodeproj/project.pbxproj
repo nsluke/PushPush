@@ -1750,14 +1750,20 @@
 		B772F6B318120CC9005C069B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
 			};
 			name = Debug;
 		};
 		B772F6B418120CC9005C069B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
 			};
 			name = Release;
 		};

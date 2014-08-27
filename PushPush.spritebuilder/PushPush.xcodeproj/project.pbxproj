@@ -135,6 +135,7 @@
 		D58DB1C3199DA28A004219DC /* Randomize12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C1199DA28A004219DC /* Randomize12.mp3 */; };
 		D5A1F8AD19990CD60024DBAA /* TwoPlayerTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A1F8AC19990CD60024DBAA /* TwoPlayerTutorial.m */; };
 		D5A8C448197DCF8F0072F9A9 /* CharacterSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */; };
+		D5A9E95219A246C300F89EA8 /* OnePlayerGameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A9E95119A246C300F89EA8 /* OnePlayerGameOver.m */; };
 		D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */; };
 		D5D2F454199AD9FA006E063B /* CountDownTimer2.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D2F453199AD9FA006E063B /* CountDownTimer2.m */; };
 		D5ED009319785A9C00A57786 /* EndlessScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5ED009219785A9C00A57786 /* EndlessScene.m */; };
@@ -191,7 +192,7 @@
 		B77F1B3D17B978D7009739AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		D31CEF859C2046E797578B43 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D53063CE199132FC001E0E12 /* AnimatedMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedMainScene.h; sourceTree = "<group>"; };
 		D53063CF199132FC001E0E12 /* AnimatedMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedMainScene.m; sourceTree = "<group>"; };
 		D53063D219914C0B001E0E12 /* AnimatedCharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedCharacterSelectScene.h; sourceTree = "<group>"; };
@@ -301,6 +302,8 @@
 		D5A1F8AC19990CD60024DBAA /* TwoPlayerTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoPlayerTutorial.m; sourceTree = "<group>"; };
 		D5A8C446197DCF8F0072F9A9 /* CharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectScene.h; sourceTree = "<group>"; };
 		D5A8C447197DCF8F0072F9A9 /* CharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSelectScene.m; sourceTree = "<group>"; };
+		D5A9E95019A246C300F89EA8 /* OnePlayerGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePlayerGameOver.h; sourceTree = "<group>"; };
+		D5A9E95119A246C300F89EA8 /* OnePlayerGameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePlayerGameOver.m; sourceTree = "<group>"; };
 		D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PushPush/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		D5D2F452199AD9FA006E063B /* CountDownTimer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownTimer2.h; sourceTree = "<group>"; };
 		D5D2F453199AD9FA006E063B /* CountDownTimer2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownTimer2.m; sourceTree = "<group>"; };
@@ -408,6 +411,7 @@
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
 				B77F1B3017B978D7009739AE /* Frameworks */,
 				B77F1B2F17B978D7009739AE /* Products */,
+				D31CEF859C2046E797578B43 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -431,7 +435,6 @@
 				D54D79AF199D093E005521E0 /* libz.dylib */,
 				D54D79AD199D090D005521E0 /* mgwuSDK.framework */,
 				8392007918EE8E3300B6C429 /* GLKit.framework */,
-				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
 				B77F1B3317B978D7009739AE /* OpenGLES.framework */,
 				B77F1B3517B978D7009739AE /* OpenAL.framework */,
@@ -503,6 +506,8 @@
 				D563F29E19997339000B8B22 /* TutorialPartTwo.m */,
 				D54B2879197F1ADF00D0580E /* GameOver.h */,
 				D54B287A197F1ADF00D0580E /* GameOver.m */,
+				D5A9E95019A246C300F89EA8 /* OnePlayerGameOver.h */,
+				D5A9E95119A246C300F89EA8 /* OnePlayerGameOver.m */,
 			);
 			name = Menus;
 			sourceTree = "<group>";
@@ -628,10 +633,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "PushPush" */;
 			buildPhases = (
+				A22B81242F074F69962324FD /* Check Pods Manifest.lock */,
 				D2E0167A18D782EC00927430 /* Run Script */,
 				B77F1B2A17B978D7009739AE /* Sources */,
 				B77F1B2B17B978D7009739AE /* Frameworks */,
 				B77F1B2C17B978D7009739AE /* Resources */,
+				0712653A053C4489AE68CED0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -805,6 +812,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0712653A053C4489AE68CED0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A22B81242F074F69962324FD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		D2E0167A18D782EC00927430 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -827,6 +864,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				D5A9E95219A246C300F89EA8 /* OnePlayerGameOver.m in Sources */,
 				D563F29F19997339000B8B22 /* TutorialPartTwo.m in Sources */,
 				D58407B91982F46200A18024 /* GameState.m in Sources */,
 				D55328AA1992862900A23E48 /* OnePlayerScene.m in Sources */,
@@ -862,22 +900,23 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
 					"COCOS2D_DEBUG=1",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -893,20 +932,22 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					"NS_BLOCK_ASSERTIONS=1",
 				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -914,12 +955,13 @@
 		};
 		B77F1CDF17B978D8009739AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D31CEF859C2046E797578B43 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -947,7 +989,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
+				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -955,12 +997,13 @@
 		};
 		B77F1CE017B978D8009739AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D31CEF859C2046E797578B43 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -980,13 +1023,14 @@
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "6E1998EB-320D-4966-B4C9-853B315A4F94";
+				PROVISIONING_PROFILE = "168057d3-b127-4a40-98a5-e37dcf136c04";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

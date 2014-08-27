@@ -226,7 +226,7 @@
     
     CGPoint touchLocation = [touch locationInWorld];
     
-    if (PAUSED == FALSE){
+    if (PAUSED == FALSE) {
     
         // if touch occured in lower half of the screen
         if (touchLocation.y < SH/2) {
@@ -240,7 +240,7 @@
             [audio playEffect:@"Blip_Select46.mp3"];
             
             //ensure that there are no more than 2 touches on the screen at a time
-            if (BtmTouchCount <3) {
+            if (BtmTouchCount < 3) {
                 
                 //bottom left
                 if (touchLocation.x<SW/3 && _Left.positionInPoints.y < SH) {
@@ -259,10 +259,10 @@
                     
                     [self moveThisLine:_Middle thisFar:yVal];
                 }
-            }
-        }
-    }
-}
+            }//BtmTouchCount < 3
+        }//touch < y
+    }//paused
+}//touchBegan
 
 
 
