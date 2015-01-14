@@ -13,7 +13,6 @@
 
     CCNode *o;
     
-    
     //The container nodes
     CCNode *_Middle;
     CCNode *_Right;
