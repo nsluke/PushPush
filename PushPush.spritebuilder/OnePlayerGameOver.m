@@ -18,12 +18,27 @@
 
 - (void) didLoadFromCCB {
     
-    return;
+    self.userInteractionEnabled = TRUE;
+    
+    
     
 }
 
 
+- (void) playAgain {
+    [MGWU logEvent:@"played again"];
+    
+    [GameState sharedInstance].gameMode = 2;
+    
+    CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
+    [[CCDirector sharedDirector] replaceScene:o];
+}
 
+
+- (void) main {
+    CCScene *mainScene = [CCBReader loadAsScene:@"AnimatedMainScene"];
+    [[CCDirector sharedDirector] replaceScene:mainScene];
+}
 
 
 @end

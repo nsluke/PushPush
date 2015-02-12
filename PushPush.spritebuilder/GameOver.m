@@ -31,8 +31,6 @@
 
 - (void) didLoadFromCCB {
     
-
-    
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     

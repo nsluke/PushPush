@@ -222,7 +222,7 @@
 // -------------------------------------------------------------------------------------------------
 #pragma mark Touch Input
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     
     CGPoint touchLocation = [touch locationInWorld];
     
@@ -267,7 +267,7 @@
 
 
 
--(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
     NSLog(@"touch cancelled");
     NSLog(@"btm Touch Count %i", BtmTouchCount);
@@ -276,7 +276,7 @@
     }
 }
 
--(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
     NSLog(@"touch ended");
     NSLog(@"btm Touch Count %i", BtmTouchCount);

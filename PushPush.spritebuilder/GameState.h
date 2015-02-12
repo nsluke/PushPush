@@ -11,9 +11,11 @@
 
 @interface GameState : NSObject
 
+
 @property (nonatomic) NSInteger p1Score;
 @property (nonatomic) NSInteger p2Score;
 @property (nonatomic) NSInteger wInteger;
+@property (nonatomic) NSInteger onePlayerHighScore;
 
 @property (nonatomic) bool colorsLoaded;
 

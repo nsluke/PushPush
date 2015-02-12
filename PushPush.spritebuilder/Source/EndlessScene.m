@@ -145,7 +145,7 @@
 // -------------------------------------------------------------------------------------------------
 #pragma mark Touch Input
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     CGPoint touchLocation = [touch locationInWorld];
 
     if (PAUSED == FALSE) {
@@ -194,7 +194,7 @@
     }//paused
 }
 
--(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
     NSLog(@"touch cancelled");
     NSLog(@"top Touch Count %i", TopTouchCount);
@@ -207,7 +207,7 @@
     }
 }
 
--(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
     NSLog(@"touch ended");
     NSLog(@"top Touch Count %i", TopTouchCount);
