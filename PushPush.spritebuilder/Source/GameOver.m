@@ -43,6 +43,12 @@
     // play sound effect
     [audio playEffect:@"Randomize6.mp3"];
     
+    p1Label.color = [GameState sharedInstance].p1Color;
+    p1Label2.color = [GameState sharedInstance].p1Color;
+    
+    p2Label.color = [GameState sharedInstance].p2Color;
+    p2Label2.color = [GameState sharedInstance].p2Color;
+    
     //load the particle system colors
     if ([GameState sharedInstance].wInteger == 1) {
         
@@ -74,9 +80,8 @@
     [MGWU logEvent:@"played again"];
     
     [GameState sharedInstance].gameMode = 2;
-    
-    CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
-    [[CCDirector sharedDirector] replaceScene:o];
+    CCScene *countDown = [CCBReader loadAsScene:@"CountDownTimer2"];
+    [[CCDirector sharedDirector] replaceScene:countDown];
 }
 
 

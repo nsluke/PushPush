@@ -46,21 +46,20 @@
                                                               blue:127.0f/255.0f
                                                              alpha:1.0f];
     }
-    
     [self loadColors];
 }
 
 - (void) onePlayer {
     [GameState sharedInstance].gameMode = 1;
-    CCScene *animatedCharSelectScene = [CCBReader loadAsScene:@"OnePlayerScene"];
-    [[CCDirector sharedDirector] replaceScene:animatedCharSelectScene];
+    CCScene *countDown = [CCBReader loadAsScene:@"CountDownTimer2"];
+    [[CCDirector sharedDirector] replaceScene:countDown];
 }
 
 
 - (void) twoPlayer {
     [GameState sharedInstance].gameMode = 2;
-    CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];
-    [[CCDirector sharedDirector] replaceScene:o];
+    CCScene *countDown = [CCBReader loadAsScene:@"CountDownTimer2"];
+    [[CCDirector sharedDirector] replaceScene:countDown];
 }
 
 - (void) TutorialPush {

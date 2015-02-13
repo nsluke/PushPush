@@ -44,6 +44,10 @@
     CCParticleSystem *BLP;
     CCParticleSystem *TRP;
     CCParticleSystem *TLP;
+    
+    //PushLabels
+    CCLabelTTF *PushLabel;
+    CCLabelTTF *PushLabel2;
 
     //ints
     int yVal;
@@ -96,6 +100,9 @@
 - (void) loadColors {
     // ---------------------------------------------------------------------------------------------
     //this is the section where we load the colors!
+    PushLabel.color = [GameState sharedInstance].p2Color;
+    PushLabel2.color = [GameState sharedInstance].p1Color;
+
     
     //color nodes
     TopLeftLine.color = [GameState sharedInstance].p2Color;
@@ -196,9 +203,9 @@
 
 -(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
-    NSLog(@"touch cancelled");
-    NSLog(@"top Touch Count %i", TopTouchCount);
-    NSLog(@"btm Touch Count %i", BtmTouchCount);
+   // NSLog(@"touch cancelled");
+   // NSLog(@"top Touch Count %i", TopTouchCount);
+   // NSLog(@"btm Touch Count %i", BtmTouchCount);
     if (touchLocation.y <SH/2) {
         BtmTouchCount--;
     }
@@ -209,9 +216,9 @@
 
 -(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
-    NSLog(@"touch ended");
-    NSLog(@"top Touch Count %i", TopTouchCount);
-    NSLog(@"btm Touch Count %i", BtmTouchCount);
+    //NSLog(@"touch ended");
+    //NSLog(@"top Touch Count %i", TopTouchCount);
+    //NSLog(@"btm Touch Count %i", BtmTouchCount);
     if (touchLocation.y <SH/2) {
         BtmTouchCount--;
     }

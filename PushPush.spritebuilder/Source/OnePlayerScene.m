@@ -105,7 +105,8 @@
     
     ResumeButton.visible = FALSE;
     
-    int _Score = 0;
+    [GameState sharedInstance].onePlayerHighScore = 0;
+    //int _Score = 0;
     
     [self schedule:@selector(step) interval:(0.3)];
     
@@ -115,32 +116,27 @@
     
     /*
     int cSwitcher = 0;
-    
     switch (cSwitcher) {
-            
         case 0:
             [self moveThisLine:_Left thisFar:-(yVal)];
             [self moveThisLine:_Right thisFar:-(yVal)];
-            
             break;
-            
         case 1:
             [self moveThisLine:_Right thisFar:-(yVal)];
             [self moveThisLine:_Middle thisFar:-(yVal)];
-            
             break;
         case 2:
             [self moveThisLine:_Left thisFar:-(yVal)];
             [self moveThisLine:_Middle thisFar:-(yVal)];
-            
         default:
             break;
     }
     */
     
-    _Score++;
+    [GameState sharedInstance].onePlayerHighScore++;
+    //_Score++;
     
-    ScoreLabel.string = [NSString stringWithFormat: @"%d", _Score];
+    ScoreLabel.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].onePlayerHighScore];
     
     /*
     if (_Score == 10){
@@ -173,6 +169,8 @@
 - (void) loadColors {
     // ---------------------------------------------------------------------------------------------
     //this is the section where we load the colors!
+    
+    ScoreLabel.color = [GameState sharedInstance].p1Color;
     
     //color nodes
     TopLeftLine.color = [GameState sharedInstance].p2Color;
@@ -227,16 +225,13 @@
     CGPoint touchLocation = [touch locationInWorld];
     
     if (PAUSED == FALSE) {
-    
-        // if touch occured in lower half of the screen
+        
         if (touchLocation.y < SH/2) {
             
             BtmTouchCount++;
             
             // access audio object
             OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-            
-            // play sound effect
             [audio playEffect:@"Blip_Select46.mp3"];
             
             //ensure that there are no more than 2 touches on the screen at a time
@@ -259,18 +254,18 @@
                     
                     [self moveThisLine:_Middle thisFar:yVal];
                 }
-            }//BtmTouchCount < 3
-        }//touch < y
-    }//paused
-}//touchBegan
+            }
+        }
+    }
+}
 
 
 
 
 -(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
-    NSLog(@"touch cancelled");
-    NSLog(@"btm Touch Count %i", BtmTouchCount);
+    //NSLog(@"touch cancelled");
+    //NSLog(@"btm Touch Count %i", BtmTouchCount);
     if (touchLocation.y <SH/2) {
         BtmTouchCount--;
     }
@@ -278,8 +273,8 @@
 
 -(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInWorld];
-    NSLog(@"touch ended");
-    NSLog(@"btm Touch Count %i", BtmTouchCount);
+    //NSLog(@"touch ended");
+    //NSLog(@"btm Touch Count %i", BtmTouchCount);
     if (touchLocation.y <SH/2) {
         BtmTouchCount--;
     }
@@ -289,12 +284,7 @@
 #pragma mark line moving
 
 - (void) moveThisLine: (CCNode*)LineMover thisFar: (int)dDist {
-    
-    
-        
         if (LineMover == _Middle) {
-            
-            
             //CCActionWithDuration
            // [_Middle stopAllActions];
             //[_Middle runAction:[CCActionMoveTo actionWithDuration:.1 position:ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist)]];
@@ -302,31 +292,21 @@
             _Middle.positionInPoints = ccp (_Middle.positionInPoints.x, _Middle.positionInPoints.y + dDist);
             
             [self victoryCheck: LineMover];
-            
             // [self hitmarked: _Middle indicator: dDist];
-            
         }
         
         if (LineMover == _Right) {
-            
             _Right.positionInPoints = ccp (_Right.positionInPoints.x, _Right.positionInPoints.y + dDist);
-            
             [self victoryCheck: LineMover];
-            
             //[self hitmarked: _Right indicator: dDist];
             
         }
         
         if (LineMover == _Left) {
-            
             _Left.positionInPoints = ccp (_Left.positionInPoints.x, _Left.positionInPoints.y + dDist);
-            
             [self victoryCheck: LineMover];
-            
             //[self hitmarked: _Left indicator: dDist];
-            
         }
-    
 }
 
 // -------------------------------------------------------------------------------
@@ -415,14 +395,10 @@
 }
 
 - (void) victoryCheck: (CCNode*) windication {
-    
-
-    NSLog(@"SOMETHING HAPPENED!!!!!    %d", windication.positionInPoints.y < 0);
-    
-    
+    //NSLog(@"SOMETHING HAPPENED!!!!!    %d", windication.positionInPoints.y < 0);
     if (windication.positionInPoints.y < 0) {
         [GameState sharedInstance].wInteger = 2;
-        CCScene *gameOver = [CCBReader loadAsScene:@"GameOver"];
+        CCScene *gameOver = [CCBReader loadAsScene:@"OnePlayerGameOver"];
         [[CCDirector sharedDirector] replaceScene:gameOver];
     }
 }

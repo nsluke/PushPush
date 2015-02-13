@@ -288,7 +288,7 @@
             pickLabel2.string = @"PICK YOUR COLOR!";
             toggle = 2;
             
-            NSLog(@"toggle is now %d", toggle);
+            //NSLog(@"toggle is now %d", toggle);
             
         } else if (toggle == 2) {
             
@@ -296,7 +296,7 @@
             pickLabel2.string = @"";
             toggle = 1;
             
-            NSLog(@"toggle is now %d", toggle);
+            //NSLog(@"toggle is now %d", toggle);
         }
         
         [self rotater: black];

@@ -9,16 +9,13 @@
 #import "TwoPlayerTutorial.h"
 
 @implementation TwoPlayerTutorial {
-    
 //    CCLabelTTF *P1Label;
 //    CCLabelTTF *P2Label;
 //    CCButton *P1Button;
 //    CCButton *P2Button;
 //    CCNodeGradient *CenterGradient;
-    
     BOOL player1Ready;
     BOOL player2Ready;
-    
 }
 
 - (void) didLoadFromCCB {
@@ -27,7 +24,6 @@
 }
 
 - (void) P1ButtonReady {
-    
     if (player1Ready == FALSE){
         player1Ready = TRUE;
     } else if (player1Ready == TRUE){
@@ -37,7 +33,6 @@
 }
 
 - (void) P2ButtonReady {
-    
     if (player2Ready == FALSE){
         player2Ready = TRUE;
     } else if (player2Ready == TRUE){
@@ -47,9 +42,7 @@
 }
 
 - (void) nextSceneCheck {
-    
     if (player1Ready == TRUE && player2Ready == TRUE) {
-        
         CCScene *TutorialPartTwoScene = [CCBReader loadAsScene:@"TutorialPartTwo"];
         [[CCDirector sharedDirector] replaceScene:TutorialPartTwoScene];
     }
