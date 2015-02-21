@@ -16,9 +16,6 @@
     
 }
 
-
-
-
 - (void) didLoadFromCCB {
     
     scoreLabel.color = [GameState sharedInstance].p2Color;
@@ -27,7 +24,7 @@
     self.userInteractionEnabled = TRUE;
     
     NSNumber *previousHighScore = (NSNumber *)([[NSUserDefaults standardUserDefaults] objectForKey:@"onePlayerHighScore"]);
-    
+    NSLog(@"");
     if (previousHighScore.integerValue < [GameState sharedInstance].onePlayerHighScore) {
         scoreLabel.string = @"NEW HIGH SCORE!";
         [[NSUserDefaults standardUserDefaults] setObject: @([GameState sharedInstance].onePlayerHighScore) forKey:@"onePlayerHighScore"];
@@ -39,7 +36,6 @@
     scoreLabel2.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].onePlayerHighScore];
     
 }
-
 
 - (void) playAgain {
     [MGWU logEvent:@"played again"];

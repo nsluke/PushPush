@@ -140,7 +140,7 @@
 {
     CGFloat positionScale = [CCDirector sharedDirector].UIScaleFactor;
     
-    if ([_dataSource respondsToSelector:@selector(tableView:heightForRowAtIndex:)])
+    if ([_dataSource respondsToSelector:@selector(ccTableView:heightForRowAtIndex:)])
     {
         // Rows may have different heights
         
@@ -153,7 +153,7 @@
         for (NSUInteger currentRow = 0; currentRow < numRows; currentRow++)
         {
             // Increase row position
-            CGFloat rowHeight = [_dataSource tableView:self heightForRowAtIndex:currentRow];
+            CGFloat rowHeight = [_dataSource ccTableView:self heightForRowAtIndex:currentRow];
             if (_rowHeightUnit == CCSizeUnitUIPoints) rowHeight *= positionScale;
             currentRowPos += rowHeight;
             
@@ -177,7 +177,7 @@
             }
             
             // Increase row position
-            CGFloat rowHeight = [_dataSource tableView:self heightForRowAtIndex:currentRow + 1];
+            CGFloat rowHeight = [_dataSource ccTableView:self heightForRowAtIndex:currentRow + 1];
             if (_rowHeightUnit == CCSizeUnitUIPoints) rowHeight *= positionScale;
             currentRowPos += rowHeight;
             
@@ -213,11 +213,11 @@
     
     CGFloat location = 0;
     
-    if ([_dataSource respondsToSelector:@selector(tableView:heightForRowAtIndex:)])
+    if ([_dataSource respondsToSelector:@selector(ccTableView:heightForRowAtIndex:)])
     {
         for (NSUInteger i = 0; i < idx; i++)
         {
-            location += [_dataSource tableView:self heightForRowAtIndex:i];
+            location += [_dataSource ccTableView:self heightForRowAtIndex:i];
         }
     }
     else
@@ -304,7 +304,7 @@
     {
         for (int i = 0; i < numRows; i++)
         {
-            layerHeight += [_dataSource tableView:self heightForRowAtIndex:i];
+            layerHeight += [_dataSource ccTableView:self heightForRowAtIndex:i];
         }
     }
     else
@@ -333,7 +333,7 @@
 {
     if (_dataSource != dataSource)
     {
-        _dataSourceFlags.heightForRowAtIndex = [dataSource respondsToSelector:@selector(tableView:heightForRowAtIndex:)];
+        _dataSourceFlags.heightForRowAtIndex = [dataSource respondsToSelector:@selector(ccTableView:heightForRowAtIndex:)];
         _dataSource = dataSource;
         [self reloadData];
     }
