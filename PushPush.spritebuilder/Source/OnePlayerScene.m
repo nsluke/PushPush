@@ -8,6 +8,7 @@
 
 #import "OnePlayerScene.h"
 #import "GameState.h"
+#import "Mixpanel.h"
 
 @implementation OnePlayerScene {
     
@@ -110,6 +111,7 @@
     
     [self schedule:@selector(step) interval:(0.3)];
     
+    [[Mixpanel sharedInstance] track:@"Started One-Player"];
 }
 
 -(void) step {

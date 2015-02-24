@@ -8,6 +8,7 @@
 
 #import "EndlessScene.h"
 #import "GameState.h"
+#import "Mixpanel.h"
 
 @implementation EndlessScene {
 
@@ -95,6 +96,9 @@
     [audio preloadEffect:@"Blip_Select46.mp3"];
     
     ResumeButton.visible = FALSE;
+    
+    [[Mixpanel sharedInstance] track:@"Started Two-Player"];
+    
 }
 
 - (void) loadColors {

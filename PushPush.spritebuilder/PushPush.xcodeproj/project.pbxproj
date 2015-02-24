@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07955D621D83A6BE5034F9AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF58C673027D918AB3CDEA99 /* libPods.a */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
+		96567DFFA7026EB48120779A /* libPods-PushPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BFD9EC62659DCEA2E37694 /* libPods-PushPush.a */; };
 		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		B737893F1807617C0076A88C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		B73789871807631A0076A88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B73789851807631A0076A88C /* main.m */; };
@@ -38,15 +40,15 @@
 		D54D79B0199D093E005521E0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79AF199D093E005521E0 /* libz.dylib */; };
 		D54D79B2199D0947005521E0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79B1199D0947005521E0 /* MessageUI.framework */; };
 		D54D79B4199D0950005521E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79B3199D0950005521E0 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D54D79B6199D0958005521E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79B5199D0958005521E0 /* StoreKit.framework */; };
 		D54D79B8199D0961005521E0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79B7199D0961005521E0 /* SystemConfiguration.framework */; };
 		D54D79BA199D0987005521E0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54D79B9199D0987005521E0 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D555CDDE1A730A1E008DB615 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D555CDDD1A730A1E008DB615 /* mgwuSDK.framework */; };
 		D58DB1BB199D980C004219DC /* Randomize6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1BA199D980C004219DC /* Randomize6.mp3 */; };
 		D58DB1C2199DA28A004219DC /* Randomize7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C0199DA28A004219DC /* Randomize7.mp3 */; };
 		D58DB1C3199DA28A004219DC /* Randomize12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C1199DA28A004219DC /* Randomize12.mp3 */; };
 		D58FD9461A730F1200AB70B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D58FD9451A730F1200AB70B6 /* Info.plist */; };
 		D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */; };
+		D5BF52471A9BD93A00275122 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF52461A9BD93A00275122 /* Crashlytics.framework */; };
+		D5BF524A1A9BF35D00275122 /* CCColor+rgbValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BF52491A9BF35D00275122 /* CCColor+rgbValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		AD29D1EC82A3E46C7B3742FC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B737893A180761570076A88C /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Published-iOS"; path = "Source/Resources/Published-iOS"; sourceTree = SOURCE_ROOT; };
 		B737893D1807617C0076A88C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		B737893E1807617C0076A88C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = "<group>"; };
@@ -105,7 +108,7 @@
 		B77F1B3D17B978D7009739AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		D31CEF859C2046E797578B43 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C3BFD9EC62659DCEA2E37694 /* libPods-PushPush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PushPush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50FE39D1A95232C00360115 /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-40.png"; path = "PushPush/Images.xcassets/AppIcon.appiconset/icon-40.png"; sourceTree = "<group>"; };
 		D5386B8C1A8D601000BAA58C /* AnimatedCharacterSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedCharacterSelectScene.h; path = Source/AnimatedCharacterSelectScene.h; sourceTree = "<group>"; };
 		D5386B8D1A8D601000BAA58C /* AnimatedCharacterSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatedCharacterSelectScene.m; path = Source/AnimatedCharacterSelectScene.m; sourceTree = "<group>"; };
@@ -135,15 +138,18 @@
 		D54D79AF199D093E005521E0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D54D79B1199D0947005521E0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D54D79B3199D0950005521E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		D54D79B5199D0958005521E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D54D79B7199D0961005521E0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D54D79B9199D0987005521E0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		D555CDDD1A730A1E008DB615 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		D58DB1BA199D980C004219DC /* Randomize6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Randomize6.mp3; sourceTree = "<group>"; };
 		D58DB1C0199DA28A004219DC /* Randomize7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Randomize7.mp3; sourceTree = "<group>"; };
 		D58DB1C1199DA28A004219DC /* Randomize12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Randomize12.mp3; sourceTree = "<group>"; };
 		D58FD9451A730F1200AB70B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PushPush/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		D5BF52461A9BD93A00275122 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D5BF52481A9BF33000275122 /* CCColor+rgbValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCColor+rgbValue.h"; path = "Source/CCColor+rgbValue.h"; sourceTree = "<group>"; };
+		D5BF52491A9BF35D00275122 /* CCColor+rgbValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCColor+rgbValue.m"; path = "Source/CCColor+rgbValue.m"; sourceTree = "<group>"; };
+		D60FD6B7A05AABC46384CB79 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF58C673027D918AB3CDEA99 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +159,9 @@
 			files = (
 				D54D79BA199D0987005521E0 /* Twitter.framework in Frameworks */,
 				D54D79B8199D0961005521E0 /* SystemConfiguration.framework in Frameworks */,
-				D54D79B6199D0958005521E0 /* StoreKit.framework in Frameworks */,
+				D5BF52471A9BD93A00275122 /* Crashlytics.framework in Frameworks */,
 				D54D79B4199D0950005521E0 /* Social.framework in Frameworks */,
 				D54D79B2199D0947005521E0 /* MessageUI.framework in Frameworks */,
-				D555CDDE1A730A1E008DB615 /* mgwuSDK.framework in Frameworks */,
 				D54D79B0199D093E005521E0 /* libz.dylib in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
@@ -169,12 +174,23 @@
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
+				07955D621D83A6BE5034F9AD /* libPods.a in Frameworks */,
+				96567DFFA7026EB48120779A /* libPods-PushPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		898786299A3DA0A27A8888E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D60FD6B7A05AABC46384CB79 /* Pods.debug.xcconfig */,
+				AD29D1EC82A3E46C7B3742FC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9222E2B918734FF800A246C7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +246,7 @@
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
 				B77F1B3017B978D7009739AE /* Frameworks */,
 				B77F1B2F17B978D7009739AE /* Products */,
-				D31CEF859C2046E797578B43 /* Pods.xcconfig */,
+				898786299A3DA0A27A8888E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,10 +261,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D555CDDD1A730A1E008DB615 /* mgwuSDK.framework */,
+				D5BF52461A9BD93A00275122 /* Crashlytics.framework */,
 				D54D79B9199D0987005521E0 /* Twitter.framework */,
 				D54D79B7199D0961005521E0 /* SystemConfiguration.framework */,
-				D54D79B5199D0958005521E0 /* StoreKit.framework */,
 				D54D79B3199D0950005521E0 /* Social.framework */,
 				D54D79B1199D0947005521E0 /* MessageUI.framework */,
 				D54D79AF199D093E005521E0 /* libz.dylib */,
@@ -262,6 +277,8 @@
 				B77F1B3D17B978D7009739AE /* Foundation.framework */,
 				B77F1B3F17B978D7009739AE /* CoreGraphics.framework */,
 				B77F1B4117B978D7009739AE /* CoreText.framework */,
+				FF58C673027D918AB3CDEA99 /* libPods.a */,
+				C3BFD9EC62659DCEA2E37694 /* libPods-PushPush.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,6 +348,8 @@
 				D5386B911A8D601000BAA58C /* CharacterSelectScene.m */,
 				D5386B8C1A8D601000BAA58C /* AnimatedCharacterSelectScene.h */,
 				D5386B8D1A8D601000BAA58C /* AnimatedCharacterSelectScene.m */,
+				D5BF52481A9BF33000275122 /* CCColor+rgbValue.h */,
+				D5BF52491A9BF35D00275122 /* CCColor+rgbValue.m */,
 			);
 			name = Menus;
 			sourceTree = "<group>";
@@ -366,6 +385,7 @@
 				B77F1B2B17B978D7009739AE /* Frameworks */,
 				B77F1B2C17B978D7009739AE /* Resources */,
 				0712653A053C4489AE68CED0 /* Copy Pods Resources */,
+				D5BF52451A9BD91900275122 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -390,6 +410,9 @@
 						DevelopmentTeam = 6TK8Q4KD6G;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
 						};
@@ -481,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A22B81242F074F69962324FD /* Check Pods Manifest.lock */ = {
@@ -513,6 +536,19 @@
 			shellPath = /bin/sh;
 			shellScript = "osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'";
 		};
+		D5BF52451A9BD91900275122 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run d4f8559039f24d47502e9f757f1be530b0f72c63 44c6c013ed7e26186b2efb8cfd9d1e95db767d2446092479d91690bcb2ccaa41";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -520,19 +556,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5386BA81A8D601000BAA58C /* EndlessScene.m in Sources */,
-				D5386BAA1A8D601000BAA58C /* GameState.m in Sources */,
-				D5386BA71A8D601000BAA58C /* CountDownTimer2.m in Sources */,
-				D5386BAC1A8D601000BAA58C /* OnePlayerGameOver.m in Sources */,
-				D5386BA61A8D601000BAA58C /* CharacterSelectScene.m in Sources */,
-				D5386BA91A8D601000BAA58C /* GameOver.m in Sources */,
-				D5386BA51A8D601000BAA58C /* AnimatedMainScene.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
-				D5386BAD1A8D601000BAA58C /* OnePlayerScene.m in Sources */,
-				D5386BAB1A8D601000BAA58C /* MainScene.m in Sources */,
+				D5386BA51A8D601000BAA58C /* AnimatedMainScene.m in Sources */,
+				D5BF524A1A9BF35D00275122 /* CCColor+rgbValue.m in Sources */,
 				D5386BA41A8D601000BAA58C /* AnimatedCharacterSelectScene.m in Sources */,
-				D5386BAF1A8D601000BAA58C /* TwoPlayerTutorial.m in Sources */,
+				D5386BA61A8D601000BAA58C /* CharacterSelectScene.m in Sources */,
+				D5386BA71A8D601000BAA58C /* CountDownTimer2.m in Sources */,
+				D5386BA81A8D601000BAA58C /* EndlessScene.m in Sources */,
+				D5386BAB1A8D601000BAA58C /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				D5386BAA1A8D601000BAA58C /* GameState.m in Sources */,
+				D5386BA91A8D601000BAA58C /* GameOver.m in Sources */,
+				D5386BAC1A8D601000BAA58C /* OnePlayerGameOver.m in Sources */,
+				D5386BAD1A8D601000BAA58C /* OnePlayerScene.m in Sources */,
+				D5386BAF1A8D601000BAA58C /* TwoPlayerTutorial.m in Sources */,
 				D5386BAE1A8D601000BAA58C /* TutorialPartTwo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +596,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -573,7 +611,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -591,6 +630,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -604,7 +644,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -612,26 +653,24 @@
 		};
 		B77F1CDF17B978D8009739AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D31CEF859C2046E797578B43 /* Pods.xcconfig */;
+			baseConfigurationReference = D60FD6B7A05AABC46384CB79 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lukesolomon/mgwuSDK/mgwuSDK.embeddedframework,
-					"$(PROJECT_DIR)/mgwuSDK.embeddedframework",
-					/Users/lukesolomon/Desktop/mgwuSDK/mgwuSDK.embeddedframework,
 					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
@@ -641,18 +680,16 @@
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/lukesolomon/Desktop/mgwuSDK/mgwuSDK.embeddedframework/mgwuSDK.framework,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "5f9fbefa-37cb-4e8d-8f48-9362dcdd54c0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -661,26 +698,24 @@
 		};
 		B77F1CE017B978D8009739AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D31CEF859C2046E797578B43 /* Pods.xcconfig */;
+			baseConfigurationReference = AD29D1EC82A3E46C7B3742FC /* Pods.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Luke Solomon (6TK8Q4KD6G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lukesolomon/mgwuSDK/mgwuSDK.embeddedframework,
-					"$(PROJECT_DIR)/mgwuSDK.embeddedframework",
-					/Users/lukesolomon/Desktop/mgwuSDK/mgwuSDK.embeddedframework,
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
 					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
@@ -690,18 +725,16 @@
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/lukesolomon/Desktop/mgwuSDK/mgwuSDK.embeddedframework/mgwuSDK.framework,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
 				PRODUCT_NAME = PushPush;
-				PROVISIONING_PROFILE = "5f9fbefa-37cb-4e8d-8f48-9362dcdd54c0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

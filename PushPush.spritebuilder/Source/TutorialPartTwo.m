@@ -23,7 +23,6 @@
 
 -(void) didLoadFromCCB {
     
-    [MGWU logEvent:@"tutorialOpened" withParams:nil];
     self.userInteractionEnabled = TRUE;
     
 }

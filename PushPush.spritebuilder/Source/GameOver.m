@@ -72,12 +72,10 @@
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys: player1score, @"P1score", player2score, @"P2score"];
     */
     
-    [MGWU logEvent:@"level_complete" /*withParams:params*/];
 }
 
 
 - (void) endless {
-    [MGWU logEvent:@"played again"];
     
     [GameState sharedInstance].gameMode = 2;
     CCScene *countDown = [CCBReader loadAsScene:@"CountDownTimer2"];

@@ -8,6 +8,8 @@
 
 #import "AnimatedCharacterSelectScene.h"
 #import "GameState.h"
+#import "Mixpanel.h"
+#import "CCColor+rgbValue.h"
 
 @implementation AnimatedCharacterSelectScene {
     
@@ -327,7 +329,7 @@
         TwoPButton.userInteractionEnabled = FALSE;
         
         return true;
-    } else if ([GameState sharedInstance].p2Color != [GameState sharedInstance].p1Color) {
+    } else {
         
         return false;
     }
@@ -345,6 +347,10 @@
     
     //[[CCDirector sharedDirector] replaceScene:[ZoomTransition CCTransitionWithDuration:1.0 scene:endlessScene]];
      */
+        
+    NSDictionary *colors = @{@"p1Color": [[GameState sharedInstance].p1Color rgbValue], @"p2color": [[GameState sharedInstance].p2Color rgbValue]};
+    [[Mixpanel sharedInstance] track:@"Started Two-Player" properties: colors];
+
 }
 
 - (void) OnePButtonPush {

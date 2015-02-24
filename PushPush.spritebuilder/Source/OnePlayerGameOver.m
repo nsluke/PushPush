@@ -8,6 +8,7 @@
 
 #import "OnePlayerGameOver.h"
 #import "GameState.h"
+#import "Mixpanel.h"
 
 @implementation OnePlayerGameOver {
     
@@ -33,12 +34,14 @@
         scoreLabel.string = @"Your score:";
     }
     
-    scoreLabel2.string = [NSString stringWithFormat: @"%ld", (long)[GameState sharedInstance].onePlayerHighScore];
+
     
+    //NSNumber *score = NSNum[[GameState sharedInstance].onePlayerHighScore];
+    NSDictionary *scores = @{@"p1score": [NSNumber numberWithInteger:[GameState sharedInstance].onePlayerHighScore]};
+    [[Mixpanel sharedInstance] track:@"Single Player Ended With Score" properties: scores];
 }
 
 - (void) playAgain {
-    [MGWU logEvent:@"played again"];
     
     [GameState sharedInstance].gameMode = 1;
     CCScene *o = [CCBReader loadAsScene:@"CountDownTimer2"];

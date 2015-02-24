@@ -26,19 +26,34 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import "Mixpanel.h"
+
+#import <Crashlytics/Crashlytics.h>
+
+#define MIXPANEL_TOKEN @"b2ba70b6f8e49b5fa2cfca934636e651"
 
 @implementation AppController
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
- 
-    [MGWU loadMGWU:@"einootaasheifi1"];
-    
     //Trying to do multi touch stuff....totally lost
     /*
     CCGLView *__glView = [CCGLView viewWithFrame: [window_ bounds];
     [__glView setMultipleTouchEnabled:YES];
     */
+    
+    //Crashlytics
+    [Crashlytics startWithAPIKey:@"d4f8559039f24d47502e9f757f1be530b0f72c63"];
+    
+    // Initialize the library with your
+    // Mixpanel project token, MIXPANEL_TOKEN
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
+    // Later, you can get your instance with
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    
+    [mixpanel track:@"Opened the App" properties:@{
+    }];
     
     
     // Configure Cocos2d with the options set in SpriteBuilder
