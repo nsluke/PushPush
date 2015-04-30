@@ -7,8 +7,4 @@ The game was designed for iOS, and can be played on an iPhone or an iPad. The ga
 
 # To Do:
 
-Add Crashlytics
-
-Add MGWU SDK
-
-Finish Single Player
+Push version 1.2 to app store
