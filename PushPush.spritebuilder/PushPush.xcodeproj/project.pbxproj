@@ -45,7 +45,6 @@
 		D58DB1BB199D980C004219DC /* Randomize6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1BA199D980C004219DC /* Randomize6.mp3 */; };
 		D58DB1C2199DA28A004219DC /* Randomize7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C0199DA28A004219DC /* Randomize7.mp3 */; };
 		D58DB1C3199DA28A004219DC /* Randomize12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58DB1C1199DA28A004219DC /* Randomize12.mp3 */; };
-		D58FD9461A730F1200AB70B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D58FD9451A730F1200AB70B6 /* Info.plist */; };
 		D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AEFF4F199ED20C00A5BD96 /* Images.xcassets */; };
 		D5BF52471A9BD93A00275122 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF52461A9BD93A00275122 /* Crashlytics.framework */; };
 		D5BF524A1A9BF35D00275122 /* CCColor+rgbValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BF52491A9BF35D00275122 /* CCColor+rgbValue.m */; };
@@ -403,7 +402,7 @@
 		B77F1B2617B978D7009739AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
@@ -485,7 +484,6 @@
 				D50FE39E1A95232C00360115 /* icon-40.png in Resources */,
 				D5AEFF50199ED20C00A5BD96 /* Images.xcassets in Resources */,
 				D54D79AC199C5891005521E0 /* Blip_Select46.mp3 in Resources */,
-				D58FD9461A730F1200AB70B6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
