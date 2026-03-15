@@ -12,9 +12,10 @@ final class TwoPlayerScene: SKScene {
     private let pauseButton = SKLabelNode(text: "⏸")
     private let resumeButton = SKLabelNode(text: "▶")
 
-    private var bottomTouchCount = 0
-    private var topTouchCount = 0
+    private var bottomTouches: Set<UITouch> = []
+    private var topTouches: Set<UITouch> = []
     private var gameOver = false
+    private var gamePaused = false
 
     // MARK: - Lifecycle
 
@@ -109,12 +110,10 @@ final class TwoPlayerScene: SKScene {
     // MARK: - Touch Handling
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard !gameOver else { return }
-
         for touch in touches {
             let location = touch.location(in: self)
 
-            // Check pause/resume
+            // Check pause/resume (always responsive)
             let tapped = atPoint(location)
             if tapped.name == "pause" {
                 pauseGame()
@@ -124,6 +123,8 @@ final class TwoPlayerScene: SKScene {
                 resumeGame()
                 return
             }
+
+            guard !gameOver, !gamePaused else { return }
 
             let rowMid = Constants.rowBoundary(screenHeight: size.height)
             let (leftBound, rightBound) = Constants.columnBounds(screenWidth: size.width)
@@ -139,13 +140,13 @@ final class TwoPlayerScene: SKScene {
 
             if location.y < rowMid {
                 // Player 1 — push up
-                guard bottomTouchCount < Constants.maxTouchesPerZone else { continue }
-                bottomTouchCount += 1
+                guard bottomTouches.count < Constants.maxTouchesPerZone else { continue }
+                bottomTouches.insert(touch)
                 linePairs[column].moveVertically(by: Constants.moveDistance)
             } else {
                 // Player 2 — push down
-                guard topTouchCount < Constants.maxTouchesPerZone else { continue }
-                topTouchCount += 1
+                guard topTouches.count < Constants.maxTouchesPerZone else { continue }
+                topTouches.insert(touch)
                 linePairs[column].moveVertically(by: -Constants.moveDistance)
             }
 
@@ -155,25 +156,18 @@ final class TwoPlayerScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            if location.y < Constants.rowBoundary(screenHeight: size.height) {
-                bottomTouchCount = max(0, bottomTouchCount - 1)
-            } else {
-                topTouchCount = max(0, topTouchCount - 1)
-            }
-        }
+        removeTouches(touches)
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            if location.y < Constants.rowBoundary(screenHeight: size.height) {
-                bottomTouchCount = max(0, bottomTouchCount - 1)
-            } else {
-                topTouchCount = max(0, topTouchCount - 1)
-            }
-        }
+        removeTouches(touches)
+    }
+
+    private func removeTouches(_ touches: Set<UITouch>) {
+        // Remove by identity — the touch is in whichever set it was originally added to,
+        // regardless of where the finger is now (handles cross-zone drag correctly)
+        bottomTouches.subtract(touches)
+        topTouches.subtract(touches)
     }
 
     // MARK: - Victory
@@ -211,12 +205,14 @@ final class TwoPlayerScene: SKScene {
     // MARK: - Pause
 
     private func pauseGame() {
+        gamePaused = true
         isPaused = true
         pauseButton.isHidden = true
         resumeButton.isHidden = false
     }
 
     private func resumeGame() {
+        gamePaused = false
         isPaused = false
         pauseButton.isHidden = false
         resumeButton.isHidden = true

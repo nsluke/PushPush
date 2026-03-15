@@ -10,8 +10,9 @@ final class OnePlayerScene: SKScene {
     private let pauseButton = SKLabelNode(text: "⏸")
     private let resumeButton = SKLabelNode(text: "▶")
 
-    private var bottomTouchCount = 0
+    private var trackedTouches: Set<UITouch> = []
     private var gameOver = false
+    private var gamePaused = false
 
     // MARK: - Lifecycle
 
@@ -123,12 +124,10 @@ final class OnePlayerScene: SKScene {
     // MARK: - Touch Handling
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard !gameOver else { return }
-
         for touch in touches {
             let location = touch.location(in: self)
 
-            // Check pause/resume
+            // Check pause/resume (always responsive)
             let tapped = atPoint(location)
             if tapped.name == "pause" {
                 pauseGame()
@@ -139,11 +138,13 @@ final class OnePlayerScene: SKScene {
                 return
             }
 
+            guard !gameOver, !gamePaused else { return }
+
             // Only process bottom half touches (player pushes up)
             guard location.y < Constants.rowBoundary(screenHeight: size.height) else { continue }
-            guard bottomTouchCount < Constants.maxTouchesPerZone else { continue }
+            guard trackedTouches.count < Constants.maxTouchesPerZone else { continue }
 
-            bottomTouchCount += 1
+            trackedTouches.insert(touch)
 
             let (leftBound, rightBound) = Constants.columnBounds(screenWidth: size.width)
             let column: Int
@@ -165,11 +166,11 @@ final class OnePlayerScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        bottomTouchCount = max(0, bottomTouchCount - touches.count)
+        trackedTouches.subtract(touches)
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        bottomTouchCount = max(0, bottomTouchCount - touches.count)
+        trackedTouches.subtract(touches)
     }
 
     // MARK: - Victory
@@ -198,12 +199,14 @@ final class OnePlayerScene: SKScene {
     // MARK: - Pause
 
     private func pauseGame() {
+        gamePaused = true
         isPaused = true
         pauseButton.isHidden = true
         resumeButton.isHidden = false
     }
 
     private func resumeGame() {
+        gamePaused = false
         isPaused = false
         pauseButton.isHidden = false
         resumeButton.isHidden = true

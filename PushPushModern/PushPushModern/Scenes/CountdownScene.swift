@@ -84,7 +84,7 @@ final class CountdownScene: SKScene {
             SKAction.wait(forDuration: 0.8),
             SKAction.run { [weak self] in
                 self?.countdownLabel.text = "GO!"
-                AudioManager.shared.play(Constants.soundGameStart, on: self ?? SKNode())
+                if let self { AudioManager.shared.play(Constants.soundGameStart, on: self) }
             },
             SKAction.wait(forDuration: 0.5),
             SKAction.run { [weak self] in self?.transitionToGameplay() },

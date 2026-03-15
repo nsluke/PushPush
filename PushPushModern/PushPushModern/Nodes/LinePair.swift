@@ -94,7 +94,6 @@ final class LinePair: SKNode {
         emitter.particleColor = color
         emitter.particleColorBlendFactor = 1.0
         emitter.particleBlendMode = .add
-        emitter.targetNode = emitter.parent
         return emitter
     }
 }
