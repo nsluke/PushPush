@@ -1,10 +1,21 @@
 # PushPush
 
-PushPush is a two player tug of war that is all about how fast your thumbs can work. 
+PushPush is a fast-paced tug-of-war arcade game for iOS built with SpriteKit. Tap as fast as you can to push lines past your opponent — or survive as long as possible solo.
 
-The game was designed for iOS, and can be played on an iPhone or an iPad. The game was written in Objective-C, but maybe in the future I will port it to swift.
+## Game Modes
 
+- **1 Player** — Lines descend automatically. Tap to push them back up and survive as long as you can. Beat your high score!
+- **2 Player** — Two players share one device, pushing from opposite ends of the screen. First to force a line past the opponent's edge wins.
 
-# To Do:
+## Features
 
-Push version 1.2 to app store
+- Customizable player colors (9 options)
+- Multi-touch support
+- High score tracking
+- Sound effects and particle animations
+- Built-in tutorial
+
+## Requirements
+
+- iOS (iPhone or iPod)
+- Built with Swift and SpriteKit
